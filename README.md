@@ -1,7 +1,7 @@
 # Goal Motivator Code Repository
 
 This is a folder containing all of the project code used to build the Goal Motivator Application for the Summer Course COSI153aj at Brandeis University.
-![Test Image 3](https://github.com/alexblattner/GoalMotivator/blob/master/src/media/Screen%20Shot%20of%20the%20App.png?raw=true)
+![Test Image 1](https://github.com/frankmei1/GoalMotivator/blob/master/src/media/Screen%20Shot%20of%20the%20App.png?raw=true)
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
