@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Contributors
 
-Chris Min Kwon Choi, Alex Blattner, Chongkai Wu, Harris Ripp, Qingtian Mei
+Chris Min Kwon Choi, Chongkai Wu, Harris Ripp, Qingtian Mei
 
 ## Available Scripts
 
