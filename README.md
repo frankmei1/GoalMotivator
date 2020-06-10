@@ -1,17 +1,32 @@
 # Goal Motivator Code Repository
 
 This is a folder containing all of the project code used to build the Goal Motivator Application for the Summer Course COSI153aj at Brandeis University.
+![Test Image 3](https://github.com/alexblattner/GoalMotivator/blob/master/src/media/Screen%20Shot%20of%20the%20App.png?raw=true)
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Contributors
 
-Chris Min Kwon Choi, Chongkai Wu, Harris Ripp, Qingtian Mei
+Chris Min Kwon Choi, Alex Blattner, Chongkai Wu, Harris Ripp, Qingtian Mei
 
 ## Available Scripts
 
 In the project directory, you can run:
 
+## Components
+Currently, this project is mainly composed of 8 components.
+
+| Component             | Description   |
+| :-------------:|--------------|
+| Header  | It display the header part of every page of the project |
+| Home | Home Screen with a picture, and a login page |
+| [Bloodhound](https://github.com/twitter/typeahead.js/blob/master/doc/bloodhound.md) | Bloodhound is the typeahead.js suggestion engine |
+| [Bootstrap](http://getbootstrap.com/) | Build responsive, mobile-first projects on the web with the world's most popular front-end component library |
+| [SASS](http://sass-lang.com/) | 	Sass is the most mature, stable, and powerful professional grade CSS extension language in the world |
+| [Browserify](http://browserify.org/) | Browserify lets you `require('modules')` in the browser by bundling up all of your dependencies |
+| [Babel](https://babeljs.io/) | Use next generation JavaScript, today |
+| [Gulp](http://gulpjs.com/) | Gulp is a toolkit for automating painful or time-consuming tasks in your development workflow |
 ### Installation
 ### `npm install`
 Install the node modules for the proeject
