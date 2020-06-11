@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Route } from 'react-router-dom';
 
 const GroupCard = ({ group }) => {
   return (
@@ -8,11 +9,12 @@ const GroupCard = ({ group }) => {
         <h2 className='card-title'>{`#${group.challenge}`}</h2>
       </div>
       <ul className='list-group list-group-flush' >
-        <li className='list-group-item'>{`Time Period: ${group.timeperiod}`}</li>
-        <li className='list-group-item'>{`Frequency: ${group.frequency}`}</li>
+       {/*<li className='list-group-item'>{`Time Period: ${group.timeperiod}`}</li>
+        <li className='list-group-item'>{`Frequency: ${group.frequency}`}</li>*/}
         <li className='list-group-item'>{`Enrollment: ${group.enrollment}`}</li>
-        <li className='list-group-item'>{`Group Creator: ${group.groupcreator}`}</li>
+        {/*<li className='list-group-item'>{`Group Creator: ${group.groupcreator}`}</li>*/}
       </ul>
+      <Route exact path="/learn more" component = {subGroupCard}/>
     </div>
   );
 };
