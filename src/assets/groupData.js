@@ -9,7 +9,6 @@ export default
     "frequency": "5 days/week",
     "enrollment": "15/20",
     "groupcreator": "Qingtian Mei",
-    "prize": "free"
   },
   {
     "id": 2,
