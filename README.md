@@ -21,12 +21,13 @@ Currently, this project is mainly composed of 8 components.
 | :-------------:|--------------|
 | Header  | It display the header part of every page of the project |
 | Home | Home Screen with a picture, and a login page |
-| [Bloodhound](https://github.com/twitter/typeahead.js/blob/master/doc/bloodhound.md) | Bloodhound is the typeahead.js suggestion engine |
-| [Bootstrap](http://getbootstrap.com/) | Build responsive, mobile-first projects on the web with the world's most popular front-end component library |
-| [SASS](http://sass-lang.com/) | 	Sass is the most mature, stable, and powerful professional grade CSS extension language in the world |
-| [Browserify](http://browserify.org/) | Browserify lets you `require('modules')` in the browser by bundling up all of your dependencies |
-| [Babel](https://babeljs.io/) | Use next generation JavaScript, today |
-| [Gulp](http://gulpjs.com/) | Gulp is a toolkit for automating painful or time-consuming tasks in your development workflow |
+| LoginIn | People can login in here |
+| SearchBox| Use this as a search box|
+| GroupCard | Each Group has a card |
+| GroupCardList| A List of Group Cards |
+| SubGroupCard | Reveal More Information About a Group |
+
+
 ### Installation
 ### `npm install`
 Install the node modules for the proeject
