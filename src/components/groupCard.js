@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Route, BrowserRouter } from 'react-router-dom';
 import subGroupCard from './subGroupCard';
-import { Switch } from '@material-ui/core';
+import Link from '@material-ui/core/Link';
 
 const GroupCard = ({ group }) => {
   return (
@@ -13,11 +12,14 @@ const GroupCard = ({ group }) => {
       <ul className='list-group list-group-flush' >
         <li className='list-group-item'>{`Enrollment: ${group.enrollment}`}</li>
       </ul>
-      <BrowserRouter>
-        <div>   
-        <Route path="/learn more" render={ ()=> <subGroupCard group = {group}/> }/>    
-        </div>
-      </BrowserRouter>
+      <Link
+            color="inherit"
+            noWrap
+            variant="body2"
+            href="/learn more"
+          >
+            "learn more"
+      </Link>
     </div>
   );
 };
