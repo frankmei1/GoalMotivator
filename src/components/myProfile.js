@@ -43,28 +43,20 @@ export default function MyProfile(props) {
   const { post } = props;
 
   return (
-    <Paper className={classes.mainFeaturedPost} style={{ backgroundImage: '../media/GoalSettingPlaceHolder.jpg' }}>
-      {/* Increase the priority of the hero background image */}
-     {<img style={{ display: 'none' }} src={require('../media/GoalSettingPlaceHolder.jpg') }  alt="" />}
-      <div className={classes.overlay} />
-      <Grid container>
-        <Grid item md={7}>
-          <div className={classes.mainFeaturedPostContent}>
-             <Typography component="h1" variant="h3" color="inherit" gutterBottom>
-                                                                    Not implemented Yet
-            </Typography>
-            <Typography variant="h5" color="inherit" paragraph>
-             Placeholder
-            </Typography>
-            <Link variant="subtitle1" href="#">
-              {post.linkText}
-            </Link>
-          </div>
-        </Grid>
-        <Grid className="sign-in" >
-        <SignIn />
-        </Grid>
+    <Grid container>
+      <Grid item md={7}>
+        <div className={classes.mainFeaturedPostContent}>
+           <Typography component="h1" variant="h3" color="inherit" center>
+                                                                  NAME's Profile
+          </Typography>
+//need to add:
+//name, age... personal data
+//current Goal
+//complted goals, maybe in collapsed?
+
+        </div>
+
       </Grid>
-    </Paper>
+    </Grid>
   );
 }
