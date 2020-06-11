@@ -8,6 +8,7 @@ import groupData from './assets/groupData.js'
 import Header from './components/header.js'
 import Home from './components/home.js'
 import MyProfile from './components/myProfile.js'
+import joinGroup from './components/joinGroup.js'
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
@@ -18,10 +19,11 @@ function App() {
       <BrowserRouter>
           <div>
             <Switch>
-             <Route path="/groups" render={ ()=> <GroupCardList data={groupData}/> }/>
+             <Route path="/groups" render={ ()=> <GroupCardList data={"groupData"}/> }/>
              <Route path="/home" render={ ()=> <Home post={"groupData"}/>}/>
              <Route path="/myProfile" render={ ()=> <MyProfile post={"groupData"}/>}/>
              <Route path="/" render={ ()=> <Home post={"groupData"}/>}/>
+             <Route path="/joinGroup" render={ ()=> <joinGroup post={"groupData"}/>}/>
              <Route component={Error}/>
            </Switch>
         </div>
@@ -36,7 +38,8 @@ const sections = [
   { title: 'About Us', url: '#' },//app intro, might be merged to "home" tab
   { title: 'Challenges', url: '/groups' },
   { title: 'My Profile', url: '/myProfile' },
-  { title: 'Setting', url: '#' }
+  { title: 'Setting', url: '#' },
+  { title: 'Join Group', url: '/joinGroup' },
 ];
 
 export default App;
