@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Route } from 'react-router-dom';
+import subGroupCard from './subGroupCard';
 
 const GroupCard = ({ group }) => {
   return (
