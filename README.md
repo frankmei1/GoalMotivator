@@ -10,23 +10,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Chris Min Kwon Choi, Alex Blattner, Chongkai Wu, Harris Ripp, Qingtian Mei
 
+
 ## Available Scripts
 
 In the project directory, you can run:
 
-## Components
-Currently, this project is mainly composed of 8 components.
-
-| Component             | Description   |
-| :-------------:|--------------|
-| Header  | It display the header part of every page of the project |
-| Home | Home Screen with a picture, and a login page |
-| [Bloodhound](https://github.com/twitter/typeahead.js/blob/master/doc/bloodhound.md) | Bloodhound is the typeahead.js suggestion engine |
-| [Bootstrap](http://getbootstrap.com/) | Build responsive, mobile-first projects on the web with the world's most popular front-end component library |
-| [SASS](http://sass-lang.com/) | 	Sass is the most mature, stable, and powerful professional grade CSS extension language in the world |
-| [Browserify](http://browserify.org/) | Browserify lets you `require('modules')` in the browser by bundling up all of your dependencies |
-| [Babel](https://babeljs.io/) | Use next generation JavaScript, today |
-| [Gulp](http://gulpjs.com/) | Gulp is a toolkit for automating painful or time-consuming tasks in your development workflow |
 ### Installation
 ### `npm install`
 Install the node modules for the proeject
@@ -76,6 +64,18 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
+## Components
+Currently, this project is mainly composed of 8 components.
+
+| Component             | Description   |
+| :-------------:|--------------|
+| Header  | It display the header part of every page of the project |
+| Home | Home Screen with a picture, and a login page |
+| LoginIn | People can login in here |
+| SearchBox| Use this as a search box|
+| GroupCard | Each Group has a card |
+| GroupCardList| A List of Group Cards |
+| SubGroupCard | Reveal More Information About a Group |
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
