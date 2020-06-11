@@ -14,10 +14,8 @@ const GroupCard = ({ group }) => {
         <li className='list-group-item'>{`Enrollment: ${group.enrollment}`}</li>
       </ul>
       <BrowserRouter>
-        <div>
-          <Switch>
-            <Route path="/learn more" component={subGroupCard}/>
-          </Switch>
+        <div>   
+        <Route path="/learn more" render={ ()=> <subGroupCard group = {group}/> }/>    
         </div>
       </BrowserRouter>
     </div>
