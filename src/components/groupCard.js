@@ -14,8 +14,8 @@ const GroupCard = ({ group }) => {
         <li className='list-group-item'>{`Frequency: ${group.frequency}`}</li>*/}
         <li className='list-group-item'>{`Enrollment: ${group.enrollment}`}</li>
         {/*<li className='list-group-item'>{`Group Creator: ${group.groupcreator}`}</li>*/}
+        <Route exact path="/learn more" component = {subGroupCard}/>
       </ul>
-      <Route exact path="/learn more" component = {subGroupCard}/>
     </div>
   );
 };
