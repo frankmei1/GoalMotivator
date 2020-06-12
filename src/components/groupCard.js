@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import subGroupCard from './subGroupCard';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+import Button from '@material-ui/core/Button';
 
 const GroupCard = ({ group }) => {
   return (
@@ -20,9 +21,13 @@ const GroupCard = ({ group }) => {
                 group: group
               }
             }
-          }         
-          >
+          } 
+          style={{ textDecoration: 'none' }}         
+          >     <Button variant="outlined" color="primary" type="button">
+
             learn more
+            </Button>
+
       </Link>
     </div>
   );

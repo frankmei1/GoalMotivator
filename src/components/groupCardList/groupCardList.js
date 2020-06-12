@@ -8,7 +8,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import useStickyState from '../useStickyState.js'
 
 const GroupCardList = ({data}) => {
-    const [items, setItems] =  useStickyState(data, "sd");
+    const [items, setItems] = useStickyState(data, "sd");
 
     const useStyles = makeStyles((theme) => ({
         formControl: {

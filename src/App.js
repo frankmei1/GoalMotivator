@@ -16,7 +16,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 function App() {
   return (
     <div className="App">
-      <Header title="GroupMotivator" sections={sections} />
+      <Header className = "header" title="GoalMotivator" sections={sections} />
       <BrowserRouter>
           <div>
             <Switch>

@@ -33,7 +33,9 @@ header input{
   width: var(--search-width);
   border-style: none; border-radius: 3px;
 }
-
+.header {
+  position: sticky;
+}
 .logo{
   height: 60px;
   width: 60px;
