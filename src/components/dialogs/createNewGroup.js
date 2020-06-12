@@ -14,7 +14,7 @@ import FormControl from '@material-ui/core/FormControl';
 import { makeStyles } from '@material-ui/core/styles';
 
 
-export default function CreateGroup() {
+export default function CreateGroup({parentCall}) {
     const useStyles = makeStyles((theme) => ({
         formControl: {
             margin: theme.spacing(1),
@@ -45,6 +45,8 @@ export default function CreateGroup() {
     };
 
     const handleClose = () => {
+        const item = {id: 0, challenge: challenge, timeperiod: timeperiod, frequency: frequency, enrollment: enrollment, groupcreator: "someone"}
+        parentCall.something(item)
         setOpen(false);
     };
 

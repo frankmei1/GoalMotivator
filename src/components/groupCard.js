@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Route, BrowserRouter } from 'react-router-dom';
 import subGroupCard from './subGroupCard';
-import { Switch } from '@material-ui/core';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+import Button from '@material-ui/core/Button';
 
 const GroupCard = ({ group }) => {
   return (
@@ -13,11 +13,22 @@ const GroupCard = ({ group }) => {
       <ul className='list-group list-group-flush' >
         <li className='list-group-item'>{`Enrollment: ${group.enrollment}`}</li>
       </ul>
-      <BrowserRouter>
-        <div>   
-        <Route path="/learn more" render={ ()=> <subGroupCard group = {group}/> }/>    
-        </div>
-      </BrowserRouter>
+      <Link
+            to = {
+              {
+              pathname: '/learn more',
+              aboutProps: {
+                group: group
+              }
+            }
+          } 
+          style={{ textDecoration: 'none' }}         
+          >     <Button variant="outlined" color="primary" type="button">
+
+            learn more
+            </Button>
+
+      </Link>
     </div>
   );
 };
