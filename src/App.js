@@ -8,7 +8,7 @@ import groupData from './assets/groupData.js'
 import Header from './components/header.js'
 import Home from './components/home.js'
 import MyProfile from './components/myProfile.js'
-
+import SubGroupCard from './components/subGroupCard.js'
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 function App() {
@@ -21,8 +21,8 @@ function App() {
              <Route path="/groups" render={ ()=> <GroupCardList data={groupData}/> }/>
              <Route path="/home" render={ ()=> <Home post={"groupData"}/>}/>
              <Route path="/myProfile" render={ ()=> <MyProfile post={"groupData"}/>}/>
+             <Route path='/learn more' component = {SubGroupCard}/>    
              <Route path="/" render={ ()=> <Home post={"groupData"}/>}/>
-             <Route path="/learn more" render={ ()=> <subGroupCard group = {group}/> }/>    
              <Route component={Error}/>
            </Switch>
         </div>

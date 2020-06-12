@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import { Route } from 'react-router-dom';
 
 
-const subGroupCard = ({group}) => {
+const SubGroupCard = (props) => {
+  const group = props.location.aboutProps.group
+  console.log(props.location.aboutProps)
     return(
       <div className = 'sub-card'>
           <div className = 'sub-card-body'>
@@ -18,4 +20,4 @@ const subGroupCard = ({group}) => {
     );
 }
 
-export default subGroupCard;
+export default SubGroupCard;

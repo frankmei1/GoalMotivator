@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import subGroupCard from './subGroupCard';
-import Link from '@material-ui/core/Link';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 
 const GroupCard = ({ group }) => {
   return (
@@ -13,12 +13,16 @@ const GroupCard = ({ group }) => {
         <li className='list-group-item'>{`Enrollment: ${group.enrollment}`}</li>
       </ul>
       <Link
-            color="inherit"
-            noWrap
-            variant="body2"
-            href="/learn more"
+            to = {
+              {
+              pathname: '/learn more',
+              aboutProps: {
+                group: group
+              }
+            }
+          }         
           >
-            "learn more"
+            learn more
       </Link>
     </div>
   );
