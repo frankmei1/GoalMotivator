@@ -4,17 +4,11 @@ import PropTypes from 'prop-types';
 import GroupCard from '../groupCard.js';
 import './groupCardList.css'
 import CreateGroup from '../dialogs/createNewGroup.js';
-import Select from '@material-ui/core/Select';
-import MenuItem from '@material-ui/core/MenuItem';
-import InputLabel from '@material-ui/core/InputLabel';
-import FormControl from '@material-ui/core/FormControl';
 import { makeStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-
+import useStickyState from '../useStickyState.js'
 
 const GroupCardList = ({data}) => {
-    const [items, setItems] = React.useState(data);
+    const [items, setItems] =  useStickyState(data, "sd");
 
     const useStyles = makeStyles((theme) => ({
         formControl: {
@@ -29,103 +23,15 @@ const GroupCardList = ({data}) => {
         }
     }));
 
-    const onSubmit = () =>{
-        const item = {id: items.length, challenge: challenge, timeperiod: timeperiod, frequency: frequency, enrollment: enrollment, groupcreator: "someone"}
+    const onSubmit = (item) =>{
+        item.id = items.length
         setItems(items.concat(item))
     }
 
-    const classes = useStyles();
-    const [open, setOpen] = React.useState(false);
-    const [openToOthers, setOpenToOthers] = React.useState('');
-    const [challenge, setChallenge] = React.useState('')
-    const [timeperiod, setTimePeriod] = React.useState('')
-    const [frequency, setFrequency] = React.useState('')
-    const [enrollment, setEnrollment] = React.useState('')
-
-
-    const handleChange = (event) => {
-        setOpenToOthers(event.target.value);
-    };
-
-    const handleClickOpen = () => {
-        setOpen(true);
-    };
-
-    const handleClose = () => {
-        setOpen(false);
-    };
-
   return (
     <div>
-    <CreateGroup />
-    <div> <FormControl variant="outlined" className={classes.formControl}>
-                        <TextField
-                            value={challenge}
-                            onChange={(e) => setChallenge(e.target.value)}
-                            autoFocus
-                            margin="dense"
-                            id="name"
-                            label="Title"
-                            variant="outlined"
-                            fullWidth
-                        />
-                    </FormControl>
-                    <FormControl variant="outlined" className={classes.formControl}>
-                        <TextField
-                            value={timeperiod}
-                            onChange={(e) => setTimePeriod(e.target.value)}
-                            autoFocus
-                            margin="dense"
-                            id="name"
-                            label="Time Period"
-                            variant="outlined"
-                            fullWidth
-                        />
-                    </FormControl>
-                    <FormControl variant="outlined" className={classes.formControl}>
-                        <TextField
-                            value={frequency}
-                            onChange={(e) => setFrequency(e.target.value)}
-                            autoFocus
-                            margin="dense"
-                            id="name"
-                            label="Frequency"
-                            variant="outlined"
-                            fullWidth
-                        />
-                    </FormControl>
-
-                    <FormControl variant="outlined" className={classes.formControl}>
-                        <TextField
-                            value={enrollment}
-                            onChange={(e) => setEnrollment(e.target.value)}
-                            autoFocus
-                            margin="dense"
-                            id="name"
-                            label="Enrollment"
-                            variant="outlined"
-                            fullWidth
-                        />        </FormControl>
-
-                    <FormControl variant="outlined" className={classes.formControl}>
-                        <InputLabel id="demo-simple-select-required-label">Open to Others</InputLabel>
-                        <Select
-                            labelId="demo-simple-select-required-label"
-                            id="demo-simple-select-filled"
-                            value={openToOthers}
-                            onChange={handleChange}
-                        >
-                            <MenuItem value="">
-                                <em>None</em>
-                            </MenuItem>
-                            <MenuItem value={false}>Private</MenuItem>
-                            <MenuItem value={true}>Public</MenuItem>
-                        </Select>
-                    </FormControl>
-                    <Button onClick={onSubmit} color="primary">
-                        Create
-          </Button>
-                    </div>
+    <CreateGroup parentCall = {{something: onSubmit}}/>
+  
 
    <div className='flex-container'>
      {items.map(group => (

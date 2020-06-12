@@ -5,7 +5,6 @@ import { Route } from 'react-router-dom';
 
 const SubGroupCard = (props) => {
   const group = props.location.aboutProps.group
-  console.log(props.location.aboutProps)
     return(
       <div className = 'sub-card'>
           <div className = 'sub-card-body'>
