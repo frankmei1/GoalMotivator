@@ -9,6 +9,8 @@ export default
     "frequency": "5 days/week",
     "enrollment": "15/20",
     "groupcreator": "Qingtian Mei",
+    "description": "user input, not implemented yet",
+    "groupmembers": "not implemented yet",
     "img": {"src":"media/pushup.jpg", "alt" : "pushup" }
   },
   {
@@ -18,6 +20,8 @@ export default
     "frequency": "5 days/week",
     "enrollment": "23/40",
     "groupcreator": "Chongkai Wu",
+    "description": "user input, not implemented yet",
+    "groupmembers": "not implemented yet",
     "img": {"src":"media/jogging.jpg", "alt" : "jogging" }
   },
   {
@@ -27,6 +31,8 @@ export default
     "frequnecy": "everyday",
     "enrollment": "3/15",
     "groupcreator": "Chris Choi",
+    "description": "user input, not implemented yet",
+    "groupmembers": "not implemented yet",
     "img": {"src":"media/old-man-and-the-sea.jpg", "alt" : "book" }
   },
   {
@@ -36,6 +42,8 @@ export default
     "frequency": "4 days/week",
     "enrollment": "6/25",
     "groupcreator": "Harris Ripp",
+    "description": "user input, not implemented yet",
+    "groupmembers": "not implemented yet",
     "img": {"src":"media/crossfit.jpg", "alt" : "crossfit" }
   },
   {
@@ -45,6 +53,8 @@ export default
     "frequency": "everyday",
     "enrollment": "111/200",
     "groupcreator": "Chi Zhang",
+    "description": "user input, not implemented yet",
+    "groupmembers": "not implemented yet",
     "img": {"src":"media/leetcode1.jpg", "alt" : "leetcode" }
   },
   {
@@ -54,6 +64,8 @@ export default
     "frequency": "everyday",
     "enrollment": "43/100",
     "groupcreator": "Tim Hickey",
+    "description": "user input, not implemented yet",
+    "groupmembers": "not implemented yet",
     "img": {"src":"media/apple.jpg", "alt" : "eatapple" }
   },
   {
@@ -63,6 +75,8 @@ export default
     "frequency": "everyday",
     "enrollment": "99/110",
     "groupcreator": "Qingtian Mei",
+    "description": "user input, not implemented yet",
+    "groupmembers": "not implemented yet",
     "img": {"src":"media/exercise.jpg", "alt" : "exercise" }
   },
   {
@@ -72,6 +86,8 @@ export default
     "frequency": "everyday",
     "enrollment": "100/150",
     "groupcreator": "Tony Wang",
+    "description": "user input, not implemented yet",
+    "groupmembers": "not implemented yet",
     "img": {"src":"media/loseweight.jpg", "alt" : "loseweight" }
   }
 ]

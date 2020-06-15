@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 const GroupCard = ({ group }) => {
   return (
     <div className='card'>
+      <img src={group.img.src} className='card-img-top' alt={group.img.alt} />
       <div className='card-body'>
         <h2 className='card-title'>{`#${group.challenge}`}</h2>
       </div>
