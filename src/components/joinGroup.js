@@ -10,6 +10,10 @@ const JoinGroup = ({ group }) => {
       </div>
       <ul className='list-group list-group-flush' >
         <li className='list-group-item'>Group 1</li>
+        <li className='list-group-item'>Group 2</li>
+        <li className='list-group-item'>Group 3</li>
+        <li className='list-group-item'>Group 4</li>
+        <li className='list-group-item'>Group 5</li>
       </ul>
     </div>
   );
