@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Route } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
 
 
 const SubGroupCard = (props) => {
@@ -20,6 +21,9 @@ const SubGroupCard = (props) => {
            <li> Group Description: {group.description}</li>
            <li> Group Members: {group.groupmembers}</li>
           </ul>
+          <Button variant="outlined" color="primary" type="button">
+             join now 
+          </Button>
       </div>
     );
 }
