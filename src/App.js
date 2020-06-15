@@ -12,11 +12,12 @@ import SubGroupCard from './components/subGroupCard.js'
 import JoinGroup from './components/joinGroup.js'
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import ElevateAppBar from './components/header2';
 
 function App() {
   return (
     <div className="App">
-      <Header className = "header" title="GoalMotivator" sections={sections} />
+      <ElevateAppBar className = "header" />
       <BrowserRouter>
           <div>
             <Switch>
@@ -33,15 +34,5 @@ function App() {
     </div>
   );
 }
-
-
-const sections = [
-  { title: 'Home', url: '/home' },
-  { title: 'About Us', url: '#' },//app intro, might be merged to "home" tab
-  { title: 'Challenges', url: '/groups' },
-  { title: 'My Profile', url: '/myProfile' },
-  { title: 'Joined Group', url: '/joinGroup' },
-  { title: 'Setting', url: '#' }
-];
 
 export default App;
