@@ -9,6 +9,7 @@ export default
     "frequency": "5 days/week",
     "enrollment": "15/20",
     "groupcreator": "Qingtian Mei",
+    "img": {"src":"media/pushup.jpg", "alt" : "pushup" }
   },
   {
     "id": 2,
@@ -17,6 +18,7 @@ export default
     "frequency": "5 days/week",
     "enrollment": "23/40",
     "groupcreator": "Chongkai Wu",
+    "img": {"src":"media/jogging.jpg", "alt" : "jogging" }
   },
   {
     "id": 3,
@@ -25,6 +27,7 @@ export default
     "frequnecy": "everyday",
     "enrollment": "3/15",
     "groupcreator": "Chris Choi",
+    "img": {"src":"media/old-man-and-the-sea.jpg", "alt" : "book" }
   },
   {
     "id": 4,
@@ -33,6 +36,7 @@ export default
     "frequency": "4 days/week",
     "enrollment": "6/25",
     "groupcreator": "Harris Ripp",
+    "img": {"src":"media/crossfit.jpg", "alt" : "crossfit" }
   },
   {
     "id": 5,
@@ -40,7 +44,8 @@ export default
     "timeperiod": "1 year",
     "frequency": "everyday",
     "enrollment": "111/200",
-    "groupcreator": "Alex Blattner",
+    "groupcreator": "Chi Zhang",
+    "img": {"src":"media/leetcode1.jpg", "alt" : "leetcode" }
   },
   {
     "id": 6,
@@ -49,6 +54,7 @@ export default
     "frequency": "everyday",
     "enrollment": "43/100",
     "groupcreator": "Tim Hickey",
+    "img": {"src":"media/apple.jpg", "alt" : "eatapple" }
   },
   {
     "id": 7,
@@ -57,6 +63,7 @@ export default
     "frequency": "everyday",
     "enrollment": "99/110",
     "groupcreator": "Qingtian Mei",
+    "img": {"src":"media/exercise.jpg", "alt" : "exercise" }
   },
   {
     "id": 8,
@@ -65,5 +72,6 @@ export default
     "frequency": "everyday",
     "enrollment": "100/150",
     "groupcreator": "Tony Wang",
+    "img": {"src":"media/loseweight.jpg", "alt" : "loseweight" }
   }
 ]
