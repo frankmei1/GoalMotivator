@@ -8,7 +8,7 @@ const SubGroupCard = (props) => {
   const group = props.location.aboutProps.group
     return(
       <div className = 'sub-card'>
-         <img src={group.img.src} className='card-img-top' alt="" />
+      <img src={require (`../${group.img.src}`)} className='card-img-top' alt={group.img.alt} />
           <div className = 'sub-card-body'>
                 <h2 className = 'sub-card-title'> more info </h2>
           </div>
