@@ -11,7 +11,7 @@ export default
     "groupcreator": "Qingtian Mei",
     "description": "user input, not implemented yet",
     "groupmembers": "not implemented yet",
-    "img": {"src":"media/pushup.jpg", "alt" : "pushup" }
+    "img": {"src":"media/pushup.png", "alt" : "pushup" }
   },
   {
     "id": 2,
@@ -22,7 +22,7 @@ export default
     "groupcreator": "Chongkai Wu",
     "description": "user input, not implemented yet",
     "groupmembers": "not implemented yet",
-    "img": {"src":"media/jogging.jpg", "alt" : "jogging" }
+    "img": {"src":"media/jogging.png", "alt" : "jogging" }
   },
   {
     "id": 3,
@@ -33,7 +33,7 @@ export default
     "groupcreator": "Chris Choi",
     "description": "user input, not implemented yet",
     "groupmembers": "not implemented yet",
-    "img": {"src":"media/old-man-and-the-sea.jpg", "alt" : "book" }
+    "img": {"src":"media/old-man-and-the-sea.png", "alt" : "book" }
   },
   {
     "id": 4,
@@ -44,7 +44,7 @@ export default
     "groupcreator": "Harris Ripp",
     "description": "user input, not implemented yet",
     "groupmembers": "not implemented yet",
-    "img": {"src":"media/crossfit.jpg", "alt" : "crossfit" }
+    "img": {"src":"media/crossfit.png", "alt" : "crossfit" }
   },
   {
     "id": 5,
@@ -55,7 +55,7 @@ export default
     "groupcreator": "Chi Zhang",
     "description": "user input, not implemented yet",
     "groupmembers": "not implemented yet",
-    "img": {"src":"media/leetcode1.jpg", "alt" : "leetcode" }
+    "img": {"src":"media/leetcode1.png", "alt" : "leetcode" }
   },
   {
     "id": 6,
@@ -66,7 +66,7 @@ export default
     "groupcreator": "Tim Hickey",
     "description": "user input, not implemented yet",
     "groupmembers": "not implemented yet",
-    "img": {"src":"media/apple.jpg", "alt" : "eatapple" }
+    "img": {"src":"media/apple.png", "alt" : "eatapple" }
   },
   {
     "id": 7,
@@ -77,7 +77,7 @@ export default
     "groupcreator": "Qingtian Mei",
     "description": "user input, not implemented yet",
     "groupmembers": "not implemented yet",
-    "img": {"src":"media/exercise.jpg", "alt" : "exercise" }
+    "img": {"src":"media/exercise.png", "alt" : "exercise" }
   },
   {
     "id": 8,
@@ -88,6 +88,6 @@ export default
     "groupcreator": "Tony Wang",
     "description": "user input, not implemented yet",
     "groupmembers": "not implemented yet",
-    "img": {"src":"media/loseweight.jpg", "alt" : "loseweight" }
+    "img": {"src":"media/loseweight.png", "alt" : "loseweight" }
   }
 ]
