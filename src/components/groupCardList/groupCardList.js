@@ -8,8 +8,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import useStickyState from '../useStickyState.js'
 
 const GroupCardList = ({data}) => {
-    const [items, setItems] = useStickyState(data, "sd");
-
+    const [items, setItems] = useStickyState(data, "NEWTEST");
     const useStyles = makeStyles((theme) => ({
         formControl: {
             margin: theme.spacing(1),
@@ -31,12 +30,10 @@ const GroupCardList = ({data}) => {
   return (
     <div>
     <CreateGroup parentCall = {{something: onSubmit}}/>
-  
-
    <div className='flex-container'>
      {items.map(group => (
        <div key={group.id} className='flex-container-element'>
-         <GroupCard group={group} />
+         <GroupCard group={group}/>
        </div>
      ))}
    </div>

@@ -45,11 +45,13 @@ export default function CreateGroup({parentCall}) {
     };
 
     const handleClose = () => {
-        const item = {id: 0, challenge: challenge, timeperiod: timeperiod, frequency: frequency, enrollment: enrollment, groupcreator: "someone"}
-        parentCall.something(item)
         setOpen(false);
     };
 
+    const createNewItem = () =>{
+        const item = {id: 0, challenge: challenge, timeperiod: timeperiod, frequency: frequency, enrollment: enrollment, groupcreator: "someone", img: {src: "src/media/leetcode1.png", alt : "leetcode"}}
+        parentCall.something(item);
+    }
 
     return (
         <div>
@@ -131,7 +133,7 @@ export default function CreateGroup({parentCall}) {
                     <Button onClick={handleClose} color="primary">
                         Cancel
           </Button>
-                    <Button onClick={handleClose} color="primary">
+                    <Button onClick={handleClose, createNewItem} color="primary">
                         Create
           </Button>
                 </DialogActions>
