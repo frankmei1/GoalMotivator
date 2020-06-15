@@ -6,10 +6,10 @@ const JoinGroup = ({ group }) => {
   return (
     <div className='card'>
       <div className='card-body'>
-        <h2 className='card-title'>Place Holder</h2>
+        <h2 className='card-title'>Groups I am part of</h2>
       </div>
       <ul className='list-group list-group-flush' >
-        <li className='list-group-item'>One</li>
+        <li className='list-group-item'>Group 1</li>
       </ul>
     </div>
   );
