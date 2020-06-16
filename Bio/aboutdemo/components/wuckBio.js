@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Text, View, Button, StyleSheet, Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import wucImage from './assets/wucimage.png';
+import wucImage from '../assets/wucimage.png';
 
 export default function wuckBio({ navigation }) {
     return (
