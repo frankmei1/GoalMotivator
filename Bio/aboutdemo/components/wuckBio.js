@@ -8,8 +8,6 @@ export default function wuckBio({ navigation }) {
       <View style={styles.container}>
         <Image source={wucImage} style={styles.logo}/>
         <Text>Chongkai Wu</Text>
-        
-  
       </View>
     );
   }
