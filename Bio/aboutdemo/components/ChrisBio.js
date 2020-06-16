@@ -7,8 +7,12 @@ export default function ChrisBio({ navigation }) {
   return (
     <View style={{ flex: 3, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Chris Choi</Text>
+
+      <Text>Brandeis Universiry, Physics and Computer Science Major</Text>
     </View>
-    <View style={{ flex: 2, alignItems: 'center', justifyContent: 'center' }}>
+    <View style={{ flex: 3, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Chris Choi</Text>
+
       <Text>Brandeis Universiry, Physics and Computer Science Major</Text>
     </View>
   );
