@@ -10,6 +10,6 @@ export default function ChrisBio({ navigation }) {
 
       <Text>Brandeis Universiry, Physics and Computer Science Major</Text>
     </View>
-
+    
   );
 }

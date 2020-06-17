@@ -3,6 +3,8 @@ import { Text, View, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import ChrisBio from "./components/ChrisBio";
+import wucBio from "./components/wuckBio";
+import QingtianMei from "./components/QingtianMei.js";
 
 const bios = [
   {name:"Tim",age:64},
@@ -42,6 +44,14 @@ function AboutScreen({ navigation }) {
           title={"Go to bio for Chris "}
           onPress={() => {navigation.navigate("ChrisBio");}}
         />
+        <Button
+          title={"Go to bio for Chongkai "}
+          onPress={() => {navigation.navigate("wucBio");}}
+        />
+         <Button
+          title={"Go to bio for Qingtian Mei "}
+          onPress={() => {navigation.navigate("QingtianMei");}}
+        />
       </View>
   );
 }
@@ -71,6 +81,9 @@ export default function App() {
         <Stack.Screen name="Details" component={DetailsScreen} />
         <Stack.Screen name="About" component={AboutScreen} />
         <Stack.Screen name="ChrisBio" component={ChrisBio} />
+        <Stack.Screen name="wucBio" component={wucBio} /> 
+        <Stack.Screen name="QingtianMei" component={QingtianMei} /> 
+
       </Stack.Navigator>
     </NavigationContainer>
   );
