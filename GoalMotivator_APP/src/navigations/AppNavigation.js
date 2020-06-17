@@ -49,19 +49,19 @@ function AboutScreen({ navigation }) {
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Information on The Developers</Text>
         <Button
-          title={"Go to bio for Chris "}
+          title={"About Chris "}
           onPress={() => {navigation.navigate("ChrisBio");}}
         />
         <Button
-          title={"Go to bio for Chongkai "}
+          title={"About Chongkai "}
           onPress={() => {navigation.navigate("wucBio");}}
         />
          <Button
-          title={"Go to bio for Qingtian Mei "}
+          title={"About Qingtian Mei "}
           onPress={() => {navigation.navigate("QingtianMei");}}
         />
         <Button
-          title={"Go to bio for Harris Ripp "}
+          title={"About Harris Ripp "}
           onPress={() => {navigation.navigate("HarrisRipp");}}
         />
       </View>
