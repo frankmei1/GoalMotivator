@@ -31,12 +31,12 @@ function MainNavigator() {
       <Stack.Screen name="Details" component={DetailsScreen} options={{ header: props => <CustomedHeader name="Details" navigation={props.navigation} /> }} />
       <Stack.Screen name="About Us" component={AboutScreen} options={{ header: props => <CustomedHeader name="About" navigation={props.navigation} /> }} />
       <Stack.Screen name="ChrisBio" component={ChrisBio} options={{ header: props => <CustomedHeader name="Chris" navigation={props.navigation} /> }}/>
-      <Stack.Screen name="wucBio" component={wucBio} options={{ header: props => <CustomedHeader name="Wuc" navigation={props.navigation} /> }}/> 
-      <Stack.Screen name="QingtianMei" component={QingtianMei} options={{ header: props => <CustomedHeader name="Mei" navigation={props.navigation} /> }}/> 
-      <Stack.Screen name="HarrisRipp" component={HarrisRipp} options={{ header: props => <CustomedHeader name="Harris" navigation={props.navigation} /> }}/> 
-      <Stack.Screen name="Challenges" component={Challenges} options={{ header: props => <CustomedHeader name="Challenges" navigation={props.navigation} /> }}/> 
-      <Stack.Screen name="MyProfile" component={MyProfile} options={{ header: props => <CustomedHeader name="MyProfile" navigation={props.navigation} /> }}/> 
-      <Stack.Screen name="SignUp" component={SignUp} options={{ header: props => <CustomedHeader name="SignUp" navigation={props.navigation} /> }}/> 
+      <Stack.Screen name="wucBio" component={wucBio} options={{ header: props => <CustomedHeader name="Wuc" navigation={props.navigation} /> }}/>
+      <Stack.Screen name="QingtianMei" component={QingtianMei} options={{ header: props => <CustomedHeader name="Mei" navigation={props.navigation} /> }}/>
+      <Stack.Screen name="HarrisRipp" component={HarrisRipp} options={{ header: props => <CustomedHeader name="Harris" navigation={props.navigation} /> }}/>
+      <Stack.Screen name="Challenges" component={Challenges} options={{ header: props => <CustomedHeader name="Challenges" navigation={props.navigation} /> }}/>
+      <Stack.Screen name="MyProfile" component={MyProfile} options={{ header: props => <CustomedHeader name="MyProfile" navigation={props.navigation} /> }}/>
+      <Stack.Screen name="SignUp" component={SignUp} options={{ header: props => <CustomedHeader name="SignUp" navigation={props.navigation} /> }}/>
 
     </Stack.Navigator>
   )
@@ -47,21 +47,21 @@ function MainNavigator() {
 function AboutScreen({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>About Screen</Text>
+      <Text>Information on The Developers</Text>
         <Button
-          title={"Go to bio for Chris "}
+          title={"About Chris "}
           onPress={() => {navigation.navigate("ChrisBio");}}
         />
         <Button
-          title={"Go to bio for Chongkai "}
+          title={"About Chongkai "}
           onPress={() => {navigation.navigate("wucBio");}}
         />
          <Button
-          title={"Go to bio for Qingtian Mei "}
+          title={"About Qingtian Mei "}
           onPress={() => {navigation.navigate("QingtianMei");}}
         />
         <Button
-          title={"Go to bio for Harris Ripp "}
+          title={"About Harris Ripp "}
           onPress={() => {navigation.navigate("HarrisRipp");}}
         />
       </View>
