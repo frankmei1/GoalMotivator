@@ -5,7 +5,7 @@ export default function Home({ navigation }) {
   return (
     <View >
       <Button
-        title="Go to Details"
+        title="Details"
         onPress={() => {
           /* 1. Navigate to the Details route with params */
           navigation.navigate('Details', {
@@ -15,7 +15,7 @@ export default function Home({ navigation }) {
         }}
       />
       <Button
-        title="About Us"
+        title="About The Developers"
         onPress={() => {
           /* 1. Navigate to the Details route with params */
           navigation.navigate('About Us');
