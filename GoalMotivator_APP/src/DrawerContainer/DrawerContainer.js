@@ -4,9 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './styles';
 import MenuButton from '../components/MenuButton/MenuButton';
 
-export default class DrawerContainer extends React.Component {
-  render() {
-    const { navigation } = this.props;
+export default function DrawerContainer({navigation}) {
     return (
       <View style={styles.content}>
         <View style={styles.container}>
@@ -18,11 +16,27 @@ export default class DrawerContainer extends React.Component {
               navigation.closeDrawer();
             }}
           />
+            <MenuButton
+            title="About Us"
+            source={require('../assets/icons/search.png')}
+            onPress={() => {
+              navigation.navigate('About Us');
+              navigation.closeDrawer();
+            }}
+          />
           <MenuButton
             title="CHALLENGES"
             source={require('../assets/icons/category.png')}
             onPress={() => {
-              navigation.navigate('Categories');
+              navigation.navigate('Challenges');
+              navigation.closeDrawer();
+            }}
+          />
+          <MenuButton
+            title="SignUp"
+            source={require('../assets/icons/search.png')}
+            onPress={() => {
+              navigation.navigate('SignUp');
               navigation.closeDrawer();
             }}
           />
@@ -30,14 +44,14 @@ export default class DrawerContainer extends React.Component {
             title="SEARCH"
             source={require('../assets/icons/search.png')}
             onPress={() => {
-              navigation.navigate('Search');
+              navigation.navigate('MyProfile');
               navigation.closeDrawer();
             }}
           />
         </View>
       </View>
     );
-  }
+  
 }
 
 DrawerContainer.propTypes = {

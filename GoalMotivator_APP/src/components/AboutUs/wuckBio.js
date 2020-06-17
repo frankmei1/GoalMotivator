@@ -29,8 +29,8 @@ export default function wuckBio({ navigation }) {
   const styles=StyleSheet.create({
     container: {
          flex: 1,
-         alignItems: 'left',
-         justifyContent: 'left',
+         alignItems: 'flex-start',
+         justifyContent: 'flex-start',
     },
     logo: {
          width: 350,
