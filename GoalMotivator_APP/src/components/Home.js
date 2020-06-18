@@ -48,7 +48,6 @@ export default function Home() {
     id => {
       const newSelected = new Map(selected);
       newSelected.set(id, !selected.get(id));
-
       setSelected(newSelected);
     },
     [selected],

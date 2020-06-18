@@ -41,7 +41,7 @@ export default function DrawerContainer({navigation}) {
             }}
           />
           <MenuButton
-            title="SEARCH"
+            title= 'MyProfile'
             source={require('../assets/icons/search.png')}
             onPress={() => {
               navigation.navigate('MyProfile');
