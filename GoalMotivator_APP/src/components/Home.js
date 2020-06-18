@@ -21,6 +21,10 @@ const DATA = [
     id: '58694a0f-3da1-471f-bd96-145571e29d72',
     title: 'Prove',
   },
+  {
+    id: '58694a0f-3da1-471f-bd96-145571e29d73',
+    title: 'Settings',
+  },
 ];
 
 function Item({ id, title, selected, onSelect }) {
@@ -29,7 +33,7 @@ function Item({ id, title, selected, onSelect }) {
       onPress={() => onSelect(id)}
       style={[
         styles.item,
-        { backgroundColor: selected ? '#6e3b6e' : '#f9c2ff' },
+        { backgroundColor: selected ? '#00FF00' : '#90ee90' },
       ]}
     >
       <Text style={styles.title}>{title}</Text>
