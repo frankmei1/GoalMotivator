@@ -15,7 +15,7 @@ export default class Profile extends Component {
     return (
       <View style={styles.container}>
           <View style={styles.header}></View>
-          <Image style={styles.avatar} source={ QingtianMei}/>
+          <Image style={styles.avatar} source={ChrisPic}/>
           <View style={styles.body}>
             <View style={styles.bodyContent}>
               <Text style={styles.name}>Chris Min Kwon Choi</Text>
