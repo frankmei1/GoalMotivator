@@ -8,16 +8,8 @@ export default function DrawerContainer({navigation}) {
     return (
       <View style={styles.content}>
         <View style={styles.container}>
-          <MenuButton
-            title="HOME"
-            source={require('../assets/icons/home.png')}
-            onPress={() => {
-              navigation.navigate('Home');
-              navigation.closeDrawer();
-            }}
-          />
             <MenuButton
-            title="About Us"
+            title="About"
             source={require('../assets/icons/search.png')}
             onPress={() => {
               navigation.navigate('About Us');
