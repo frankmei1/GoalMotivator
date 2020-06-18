@@ -10,7 +10,7 @@ export default function DrawerContainer({navigation}) {
         <View style={styles.container}>
             <MenuButton
             title="About"
-            source={require('../assets/icons/search.png')}
+            source={require('../assets/icons/information.png')}
             onPress={() => {
               navigation.navigate('About Us');
               navigation.closeDrawer();
