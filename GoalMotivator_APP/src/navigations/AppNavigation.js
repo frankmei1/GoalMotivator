@@ -38,7 +38,7 @@ function MainNavigator() {
       <Stack.Screen name="Challenges" component={Challenges} options={{ header: props => <CustomedHeader name="Challenges" navigation={props.navigation} /> }}/>
       <Stack.Screen name="MyProfile" component={MyProfile} options={{ header: props => <CustomedHeader name="MyProfile" navigation={props.navigation} /> }}/>
       <Stack.Screen name="SignUp" component={SignUp} options={{ header: props => <CustomedHeader name="SignUp" navigation={props.navigation} /> }}/>
-
+      <Stack.Screen name="Proofs" component={Proofs} options={{ header: props => <CustomedHeader name="Proofs" navigation={props.navigation} /> }}/>
     </Stack.Navigator>
   )
 }
