@@ -12,6 +12,7 @@ import HarrisRipp from "../components/AboutUs/HarrisRipp.js";
 import MyProfile from "../components/MyProfile.js";
 import Challenges from "../components/Challenges.js";
 import SignUp from "../components/SignUp.js";
+import Proofs from "../components/Proofs.js";
 
 const Stack = createStackNavigator();
 
