@@ -1,9 +1,8 @@
 import * as React from 'react';
-import React from 'react';
-import { Text, View, Button, StyleSheet,  TextInput, Button, TouchableHighlight, Image, Alert } from 'react-native';
+import { Text, View, StyleSheet,  TextInput, TouchableHighlight, Image, Alert } from 'react-native';
 import maleIcon from '../../assets/icons/maleIcon.png';
 import message from '../../assets/icons/message.png';
-import key from '../../assets/icons/key.png';
+import key1 from '../../assets/icons/key1.png';
 
 export default function SignUpPage({ navigation }) {
 
@@ -25,6 +24,25 @@ export default function SignUpPage({ navigation }) {
               underlineColorAndroid='transparent'
               onChangeText={(fullName) => this.setState({fullName})}/>
         </View>
+        <View style={styles.inputContainer}>
+          <Image style={styles.inputIcon} source={message}/>
+          <TextInput style={styles.inputs}
+              placeholder="Email"
+              keyboardType="email-address"
+              underlineColorAndroid='transparent'
+              onChangeText={(email) => this.setState({email})}/>
+        </View>
+        <View style={styles.inputContainer}>
+          <Image style={styles.inputIcon} source={key1}/>
+          <TextInput style={styles.inputs}
+              placeholder="Password"
+              secureTextEntry={true}
+              underlineColorAndroid='transparent'
+              onChangeText={(password) => this.setState({password})}/>
+        </View>
+        <TouchableHighlight style={[styles.buttonContainer, styles.signupButton]} onPress={() => this.onClickListener('sign_up')}>
+          <Text style={styles.signUpText}>Sign up</Text>
+        </TouchableHighlight>
     </View>
     
   );
