@@ -44,7 +44,6 @@ export default function SignUpPage({ navigation }) {
           <Text style={styles.signUpText}>Sign up</Text>
         </TouchableHighlight>
     </View>
-    
   );
 }
 
