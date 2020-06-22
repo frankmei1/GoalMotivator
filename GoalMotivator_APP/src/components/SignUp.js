@@ -1,16 +1,16 @@
 import * as React from 'react';
 import { Text, View, StyleSheet,  TextInput, TouchableHighlight, Image, Alert } from 'react-native';
-import maleIcon from '../../assets/icons/maleIcon.png';
-import message from '../../assets/icons/message.png';
-import key1 from '../../assets/icons/key1.png';
+import maleIcon from '../assets/icons/maleIcon.png';
+import message from '../assets/icons/message.png';
+import key1 from '../assets/icons/key1.png';
 
 export default function SignUpPage({ navigation }) {
 
-  const[name, setName] = useState("")
-  const[email, setEmail] = useState("")
-  const[password, setPassword] = useState("")
+  const[name, setName] = React.useState("")
+  const[email, setEmail] = React.useState("")
+  const[password, setPassword] = React.useState("")
 
-  onClickListener = (viewId) => {
+  const onClickListener = (viewId) => {
     Alert.alert("Alert", "Button pressed "+viewId);
   }
 

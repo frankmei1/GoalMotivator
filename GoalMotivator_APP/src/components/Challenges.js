@@ -13,12 +13,13 @@ import Constants from 'expo-constants';
 import challengeData from '../assets/challenges/challengeData.js';
 import crossfit from '../assets/challenges/media/crossfit.png';
 import MenuButton from './MenuButton/MenuButton';
+import AddChallenges from './AddChallenges.js';
 
 function Item({ id, title, src, info, selected, onSelect }) {
   const imageSource = '../assets/' + src;    
   return (
     <TouchableHighlight
-      underlayColor = 'rgba(73, 182, 77,1,0.9)'
+      underlayColor = '#f0f'
       onPress={() => onSelect(id)}
     >
     <View style = {styles.container}>
@@ -53,6 +54,7 @@ export default function Challenges() {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollView}>
+        {/* <AddChallenges /> */}
         <FlatList
           data={challengeData}
           renderItem={({ item }) => (
