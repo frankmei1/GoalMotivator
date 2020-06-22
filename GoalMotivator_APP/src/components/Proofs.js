@@ -13,19 +13,19 @@ export default class Profile extends Component {
     return (
       <View style={styles.container}>
           <View style={styles.header}></View>
-          <Image style={styles.avatar} source={{uri: 'https://bootdey.com/img/Content/avatar/avatar6.png'}}/>
           <View style={styles.body}>
             <View style={styles.bodyContent}>
+              <View style={styles.body}>
               <Text style={styles.name}>PLACEHOLDER CODE</Text>
               <Text style={styles.info}>Location</Text>
               <Text style={styles.description}>Descrption</Text>
               <Text style={styles.info}>LIST OF GROUPS??</Text>
-
+              </View>
               <TouchableOpacity style={styles.buttonContainer}>
-                <Text>Contact Method 1</Text>
+                <Text>Uploading a Image</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.buttonContainer}>
-                <Text>Contact Method 2</Text>
+                <Text>Uploading a Video</Text>
               </TouchableOpacity>
             </View>
         </View>
@@ -90,4 +90,5 @@ const styles = StyleSheet.create({
     borderRadius:30,
     backgroundColor: "#00BFFF",
   },
+  
 });

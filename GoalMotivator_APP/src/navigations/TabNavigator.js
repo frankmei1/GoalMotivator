@@ -28,6 +28,7 @@ export default function TabNavigator(){
         ? 'ios-list-box'
         : 'ios-list';
       }
+
   return <Ionicons name={iconName} size={size} color={color}     />;
         },
       })}
