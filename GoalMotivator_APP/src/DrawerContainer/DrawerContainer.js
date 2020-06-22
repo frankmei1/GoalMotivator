@@ -40,6 +40,14 @@ export default function DrawerContainer({navigation}) {
               navigation.closeDrawer();
             }}
           />
+          <MenuButton
+            title="GoalProofs"
+            source={require('../assets/icons/upload.png')}
+            onPress={() => {
+                navigation.navigate('Proofs');
+                navigation.closeDrawer();
+            }}
+          />
         </View>
       </View>
     );
