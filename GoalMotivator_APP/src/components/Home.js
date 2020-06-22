@@ -57,7 +57,7 @@ export default function Home() {
   return (
     <SafeAreaView style={styles.container}>
       <View >
-      <FlatList 
+      <FlatList
         data={DATA}
         renderItem={({ item }) => (
           <View style={styles.GridViewBlockStyle}>
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
         alignContent: 'stretch',
   },
   GridViewBlockStyle: {
- 
+
   justifyContent: 'center',
   flex:1,
   alignItems: 'center',
@@ -92,13 +92,13 @@ const styles = StyleSheet.create({
   height: 100,
   margin: 5,
   backgroundColor: 'white'
- 
+
 },
    container: {
   justifyContent: 'center',
 flex:1,
 margin: 10,
-paddingTop: (Platform.OS) === 'ios' ? 20 : 0
+//paddingTop: (Platform.OS) === 'ios' ? 20 : 0
   },
   item: {
     flex: 1,
@@ -106,8 +106,8 @@ paddingTop: (Platform.OS) === 'ios' ? 20 : 0
     padding: 20,
     marginVertical: 8,
     marginHorizontal: 16,
-    flexDirection: 'column', 
-    margin: 1 
+    flexDirection: 'column',
+    margin: 1
   },
   title: {
     fontSize: 32,
