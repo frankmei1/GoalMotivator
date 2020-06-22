@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
   justifyContent: 'center',
 flex:1,
 margin: 10,
-paddingTop: (Platform.OS) === 'ios' ? 20 : 0
+// paddingTop: (Platform.OS) === 'ios' ? 20 : 0
   },
   item: {
     flex: 1,

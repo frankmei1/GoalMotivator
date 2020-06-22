@@ -40,6 +40,8 @@ export default function MainNavigator({props}) {
       <Stack.Screen name="MyProfile" component={MyProfile} options={{ header: props => <CustomedHeader name="MyProfile" navigation={props.navigation} /> }}/>
       <Stack.Screen name="SignUp" component={SignUp} options={{ header: props => <CustomedHeader name="SignUp" navigation={props.navigation} /> }}/>
       <Stack.Screen name="Proofs" component={Proofs} options={{ header: props => <CustomedHeader name="Proofs" navigation={props.navigation} /> }}/>
+      <Stack.Screen name="Learn More" component={Proofs} options={{ header: props => <CustomedHeader name="Proofs" navigation={props.navigation} /> }}/>
+
     </Stack.Navigator>
   )
 }
