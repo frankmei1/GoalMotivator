@@ -22,6 +22,5 @@ export default class MenuButton extends React.Component {
 
 MenuButton.propTypes = {
   onPress: PropTypes.func,
-  source: PropTypes.string,
   title: PropTypes.string
 };

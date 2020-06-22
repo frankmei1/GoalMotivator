@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import { Icon } from 'react-native-elements'
-import ChrisPic from '../../assets/profiles/ChrisPic.JPG';
+import ChrisPic from '../../assets/profiles/ChrisPic.jpg';
 
 export default class Profile extends Component {
 
