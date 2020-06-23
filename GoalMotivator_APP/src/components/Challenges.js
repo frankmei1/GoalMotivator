@@ -1,4 +1,4 @@
-import React from 'react';
+import React ,{useState,useEffect} from 'react';
 import {
   SafeAreaView,
   TouchableHighlight,
@@ -14,6 +14,7 @@ import challengeData from '../assets/challenges/challengeData.js';
 import crossfit from '../assets/challenges/media/crossfit.png';
 import MenuButton from './MenuButton/MenuButton';
 import AddChallenges from './AddChallenges.js';
+import {CalendarList} from "react-native-common-date-picker";
 
 function Item({ id, title, src, info, selected, onSelect }) {
   const imageSource = '../assets/' + src;    
@@ -40,7 +41,7 @@ function Item({ id, title, src, info, selected, onSelect }) {
   );
 }
 
-export default function Challenges() {
+export default function Challenges({navigation}) {
   const [selected, setSelected] = React.useState(new Map());
   const onSelect = React.useCallback(
     id => {
@@ -53,9 +54,17 @@ export default function Challenges() {
 
   return (
     <SafeAreaView style={styles.container}>
+      <MenuButton
+            style = {styles.Addcontainer}
+            title="Add Challenge"
+            source={require('../assets/icons/add.png')}
+            onPress={() => {
+                navigation.navigate('AddChallenge');
+            }}
+          />      
+
       <ScrollView style={styles.scrollView}>
-        {/* <AddChallenges /> */}
-        <FlatList
+          <FlatList
           data={challengeData}
           renderItem={({ item }) => (
             <Item
@@ -122,4 +131,9 @@ const styles = StyleSheet.create({
     margin: 10,
 
   },
+  Addcontainer: {
+    flex: 1,
+    alignItems: 'flex-start',
+    paddingHorizontal: 20
+  }
 });
