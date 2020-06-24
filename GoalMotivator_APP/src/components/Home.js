@@ -6,8 +6,39 @@ import {
   StyleSheet,
   View,
   Text,
+   Image
 } from 'react-native';
 import Constants from 'expo-constants';
+
+
+
+
+
+const styles = StyleSheet.create({
+  container: {
+    paddingTop: 50,
+  },
+  tinyLogo: {
+    width: 50,
+    height: 50,
+  },
+  logo: {
+    width: 66,
+    height: 58,
+  },
+});
+
+
+
+
+
+
+
+
+
+
+
+
 
 const DATA = [
   {
@@ -55,7 +86,29 @@ export default function Home() {
   );
 
   return (
+
+
+
+
+
     <SafeAreaView style={styles.container}>
+    <Image
+      style1={styles.tinyLogo}
+      source={require('@expo/snack-static/react-native-logo.png')}
+    />
+    <Image
+      style1={styles.tinyLogo}
+      source={{
+        uri: 'https://reactnative.dev/img/tiny_logo.png',
+      }}
+    />
+    <Image
+      style1={styles.logo}
+      source={{
+        uri:
+          'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAYAAAA6oTAqAAAAEXRFWHRTb2Z0d2FyZQBwbmdjcnVzaEB1SfMAAABQSURBVGje7dSxCQBACARB+2/ab8BEeQNhFi6WSYzYLYudDQYGBgYGBgYGBgYGBgYGBgZmcvDqYGBgmhivGQYGBgYGBgYGBgYGBgYGBgbmQw+P/eMrC5UTVAAAAABJRU5ErkJggg==',
+      }}
+    />
       <View >
       <FlatList
         data={DATA}
