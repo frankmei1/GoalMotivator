@@ -2,15 +2,17 @@ import * as React from 'react';
 import { Text, View, StyleSheet,  TextInput, TouchableHighlight, Image, Alert } from 'react-native';
 import maleIcon from '../assets/icons/maleIcon.png';
 import message from '../assets/icons/message.png';
+import SelectPicker from 'react-native-select-picker';
 import key1 from '../assets/icons/key1.png';
 import calender from '../assets/icons/calender.png';
 import userName from '../assets/icons/userName.png';
-
+import gender1 from '../assets/icons/gender1.png';
 
 export default function SignUpPage({ navigation }) {
 
   const[name, setName] = React.useState("")
   const[age, setAge] = React.useState("")
+  const[gender, setGender] = React.useState("")
   const[username, setUsername] = React.useState("")
   const[email, setEmail] = React.useState("")
   const[password, setPassword] = React.useState("")
@@ -38,6 +40,17 @@ export default function SignUpPage({ navigation }) {
               keyboardType="email-address"
               underlineColorAndroid='transparent'
               onChangeText={(age) => this.setState({age})}/>
+        </View>
+          
+        <View>
+          <Image style={styles.inputIcon} source={gender1}/>
+          <SelectPicker onValueChange={(gender) => {this.setState({selected: gender})}} selected={this.state.selected}>
+            <Text style={styles.inputs}>Select your gender</Text>
+            <SelectPicker.Item label="Male" value="male" />	
+            <SelectPicker.Item label="Female" value="female" />	
+            <SelectPicker.Item label="Other" value="other" />	
+            <SelectPicker.Item label="Unidentified" value="unidentified" />	
+          </SelectPicker>
         </View>
 
         <View style={styles.inputContainer}>
