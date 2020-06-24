@@ -72,7 +72,7 @@ export default function Challenges({navigation}) {
         item.id = items.length
         setItems(items.concat(item))
   }
-
+  
   const writeItemToCloud = async newValue => {
     //await setItem(JSON.stringify(newValue));
 
@@ -109,11 +109,14 @@ export default function Challenges({navigation}) {
     const itemParsed = await item.json()
     console.log(`item = ${itemParsed}`)
     const v = parseInt(itemParsed) || 0
-    setValue(v)
+    setItems(v)
     console.log(`just set value to ${v}, now value=${value}`)
     //setValue(JSON.parse(item));
   };
-
+  
+  writeItemToCloud(items);
+  readItemFromCloud()
+  
   return (
     <SafeAreaView style={styles.container}>
       <MenuButton
