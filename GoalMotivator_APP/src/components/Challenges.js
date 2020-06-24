@@ -75,7 +75,7 @@ export default function Challenges({navigation}) {
   
   const writeItemToCloud = async newValue => {
     //await setItem(JSON.stringify(newValue));
-
+    console.log('newValue' + JSON.stringify(newValue))
     await fetch(`${remoteserverURL}/store`,{
       method:"POST",
       headers: {
@@ -83,12 +83,12 @@ export default function Challenges({navigation}) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        key: 'counterDemo',
+        key: 'GOAlMotivator',
         deviceId: deviceId,
         value: newValue
       })
     });
-
+    
     setValue(newValue);
   };
 
