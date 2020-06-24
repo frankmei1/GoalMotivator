@@ -6,10 +6,9 @@ import { AsyncStorage } from 'react-native';
 import {DatePicker} from "react-native-common-date-picker";
 import {CalendarList} from "react-native-common-date-picker";
 
-var uuid = require('react-native-uuid');
-const realDeviceId = uuid.v4(); // this generates a unique ID for this device.
-
-export default function AddChallenge({parentCall}) {
+export default function AddChallenge({ route, navigation }) {
+   
+    const { parentCall } = route.params;
 
     const [open, setOpen] = React.useState(false);
     const [openToOthers, setOpenToOthers] = React.useState('');
@@ -17,35 +16,17 @@ export default function AddChallenge({parentCall}) {
     const [timeperiod, setTimePeriod] = React.useState('')
     const [frequency, setFrequency] = React.useState('')
     const [enrollment, setEnrollment] = React.useState('')
+
     const { control, handleSubmit, errors } = useForm();
+
     const { ifVisible, setIfVisible} = React.useState(false);
-    const [value, setValue] = useState(0);
-    const [deviceId,setDeviceId] = useState("1234")
-    const [email, setEmail] = useState("anonymous@brandeis.edu");
-    const [loggingIn,setLoggingIn] = useState(true)
-    const localserverURL='http://localhost:3000'  // for local server
-    const remoteserverURL = 'http://gracehopper.cs-i.brandeis.edu:3500'
 
-    const onSubmit = data => Alert.alert(
 
-        "Form Data",
-        JSON.stringify(data),
-    );
-    const handleChange = (event) => {
-        setOpenToOthers(event.target.value);
-    };
-
-    const handleClickOpen = () => {
-        setOpen(true);
-    };
-
-    const handleClose = () => {
-        setOpen(false);
-    };
+  
 
     const createNewItem = () =>{
         const item = {id: 0, challenge: challenge, timeperiod: timeperiod, frequency: frequency, enrollment: enrollment, groupcreator: "someone", img: {src: "src/media/leetcode1.png", alt : "leetcode"}}
-        parentCall.something(item);
+        parentCall(item);        
     }
 
     return (
@@ -55,51 +36,52 @@ export default function AddChallenge({parentCall}) {
               placeholder="Full name"
               keyboardType="email-address"
               underlineColorAndroid='transparent'
-              onChangeText={(challenge) => setChallenge}/>
+              onChangeText={(challenge) => setChallenge(challenge)}/>
         </View>
-        <View style={styles.inputContainer}>
-     <CalendarList
-          containerStyle={{flex: 1}}
-          cancel={() => setIfVisible(false)}
-          confirm={data => {
-              this.setState({
+        {/* <View style={styles.inputContainer}>
+        <CalendarList
+            containerStyle={{flex: 1}}
+            cancel={() => setIfVisible(false)}
+            confirm={data => {
+                this.setState({
                    selectedDate1: data[0],
                    selectedDate2: data[1],
                    visible: false,
-              });
-          }}
-     />
-        </View>
+                });
+            }}
+        />
+        </View> */}
         <View style={styles.inputContainer}>
           <TextInput style={styles.inputs}
               placeholder="Length"
-              secureTextEntry={true}
+              secureTextEntry={false}
               underlineColorAndroid='transparent'
-              onChangeText={(password) => this.setState({password})}/>
+              onChangeText={(timeperiod) => setTimePeriod({timeperiod})}/>
         </View>
 
          <View style={styles.inputContainer}>
           <TextInput style={styles.inputs}
               placeholder="Frequency"
-              secureTextEntry={true}
+              secureTextEntry={false}
               underlineColorAndroid='transparent'
-              onChangeText={(frequency) => setFrequency}/>
+              onChangeText={(frequency) => setFrequency(frequency)}/>
         </View>
          <View style={styles.inputContainer}>
           <TextInput style={styles.inputs}
               placeholder="Enrollment"
-              secureTextEntry={true}
+              secureTextEntry={false}
               underlineColorAndroid='transparent'
-              onChangeText={(enrollment) => setEnrollment}/>
+              onChangeText={(enrollment) => setEnrollment(enrollment)}/>
         </View>
         <View style={styles.inputContainer}>
           <TextInput style={styles.inputs}
               placeholder="Public"
-              secureTextEntry={true}
+              secureTextEntry={false}
               underlineColorAndroid='transparent'
-              onChangeText={(openToOthers) => setOpenToOthers}/>
+              onChangeText={(openToOthers) => setOpenToOthers(openToOthers)}/>
         </View>
-        <TouchableHighlight style={[styles.buttonContainer, styles.signupButton]} onPress={() => this.onClickListener('sign_up')}>
+        <TouchableHighlight style={[styles.buttonContainer, styles.signupButton]} onPress={() => {createNewItem();               
+                                                                                                  navigation.navigate('Challenges');}}>
           <Text style={styles.signUpText}>Add a Challenge</Text>
         </TouchableHighlight>
     </View>

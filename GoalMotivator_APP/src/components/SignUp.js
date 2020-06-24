@@ -4,7 +4,8 @@ import maleIcon from '../assets/icons/maleIcon.png';
 import message from '../assets/icons/message.png';
 import key1 from '../assets/icons/key1.png';
 import calender from '../assets/icons/calender.png';
-import userName from '../assets/icons/username.png';
+import userName from '../assets/icons/userName.png';
+
 
 export default function SignUpPage({ navigation }) {
 

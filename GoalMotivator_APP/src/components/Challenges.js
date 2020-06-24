@@ -14,7 +14,8 @@ import challengeData from '../assets/challenges/challengeData.js';
 import crossfit from '../assets/challenges/media/crossfit.png';
 import MenuButton from './MenuButton/MenuButton';
 import AddChallenges from './AddChallenges.js';
-import {CalendarList} from "react-native-common-date-picker";
+
+
 
 function Item({ id, title, src, info, selected, onSelect }) {
   const imageSource = '../assets/' + src;    
@@ -41,8 +42,23 @@ function Item({ id, title, src, info, selected, onSelect }) {
   );
 }
 
+var uuid = require('react-native-uuid');
+const realDeviceId = uuid.v4(); // this generates a unique ID for this device.
+
 export default function Challenges({navigation}) {
+
+  const localserverURL='http://localhost:3000'  // for local server
+  const remoteserverURL = 'http://gracehopper.cs-i.brandeis.edu:3500'
+
   const [selected, setSelected] = React.useState(new Map());
+  const [items, setItems] = useState(challengeData);
+
+
+  const [value, setValue] = useState(0);
+  const [deviceId,setDeviceId] = useState("1234")
+  const [email, setEmail] = useState("anonymous@brandeis.edu");
+  const [loggingIn,setLoggingIn] = useState(true)
+
   const onSelect = React.useCallback(
     id => {
       const newSelected = new Map(selected);
@@ -52,6 +68,52 @@ export default function Challenges({navigation}) {
     [selected],
   );
 
+  const onSubmit = (item) =>{
+        item.id = items.length
+        setItems(items.concat(item))
+  }
+
+  const writeItemToCloud = async newValue => {
+    //await setItem(JSON.stringify(newValue));
+
+    await fetch(`${remoteserverURL}/store`,{
+      method:"POST",
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        key: 'counterDemo',
+        deviceId: deviceId,
+        value: newValue
+      })
+    });
+
+    setValue(newValue);
+  };
+
+  const readItemFromCloud = async () => {
+    //const item = await getItem();
+    console.log("about to read item from Cloud: deviceId="+deviceId)
+    const item = await fetch(`${remoteserverURL}/get`,{
+      method:"POST",
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        key: 'counterDemo',
+        deviceId: deviceId,
+      })
+    })
+    const itemParsed = await item.json()
+    console.log(`item = ${itemParsed}`)
+    const v = parseInt(itemParsed) || 0
+    setValue(v)
+    console.log(`just set value to ${v}, now value=${value}`)
+    //setValue(JSON.parse(item));
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <MenuButton
@@ -59,13 +121,13 @@ export default function Challenges({navigation}) {
             title="Add Challenge"
             source={require('../assets/icons/add.png')}
             onPress={() => {
-                navigation.navigate('AddChallenge');
+                navigation.navigate('AddChallenge',  {parentCall: onSubmit});
             }}
-          />      
+      />      
 
       <ScrollView style={styles.scrollView}>
           <FlatList
-          data={challengeData}
+          data={items}
           renderItem={({ item }) => (
             <Item
               id={item.id}
