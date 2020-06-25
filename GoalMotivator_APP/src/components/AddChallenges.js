@@ -1,12 +1,13 @@
 import React ,{useState,useEffect} from 'react';
 import { Text, View, StyleSheet, Modal, TextInput, TouchableHighlight, Image, Alert } from 'react-native';
 import { FormLabel, FormInput, FormValidationMessage } from 'react-native-elements';
+//import { useForm, Controller } from "react-hook-form";
 import { AsyncStorage } from 'react-native';
 import {DatePicker} from "react-native-common-date-picker";
 import {CalendarList} from "react-native-common-date-picker";
 
 export default function AddChallenge({ route, navigation }) {
-   
+
     const { parentCall } = route.params;
 
     const [open, setOpen] = React.useState(false);
@@ -20,11 +21,11 @@ export default function AddChallenge({ route, navigation }) {
     const { ifVisible, setIfVisible} = React.useState(false);
 
 
-  
+
 
     const createNewItem = () =>{
         const item = {id: 0, challenge: challenge, timeperiod: timeperiod, frequency: frequency, enrollment: enrollment, groupcreator: "someone", img: {src: "src/media/leetcode1.png", alt : "leetcode"}}
-        parentCall(item);        
+        parentCall(item);
     }
 
     return (
@@ -78,7 +79,7 @@ export default function AddChallenge({ route, navigation }) {
               underlineColorAndroid='transparent'
               onChangeText={(openToOthers) => setOpenToOthers(openToOthers)}/>
         </View>
-        <TouchableHighlight style={[styles.buttonContainer, styles.signupButton]} onPress={() => {createNewItem();               
+        <TouchableHighlight style={[styles.buttonContainer, styles.signupButton]} onPress={() => {createNewItem();
                                                                                                   navigation.navigate('Challenges');}}>
           <Text style={styles.signUpText}>Add a Challenge</Text>
         </TouchableHighlight>
@@ -124,7 +125,7 @@ const styles = StyleSheet.create({
     marginBottom:20,
     width:250,
     borderRadius:30,
-    
+
   },
   signupButton: {
     backgroundColor: "gray",

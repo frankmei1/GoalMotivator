@@ -6,8 +6,18 @@ import {
   StyleSheet,
   View,
   Text,
+   Image
 } from 'react-native';
 import Constants from 'expo-constants';
+
+
+
+
+
+
+
+
+
 
 const DATA = [
   {
@@ -43,6 +53,7 @@ function Item({ id, title, selected, onSelect }) {
 }
 
 export default function Home() {
+
   const [selected, setSelected] = React.useState(new Map());
 
   const onSelect = React.useCallback(
@@ -55,8 +66,12 @@ export default function Home() {
   );
 
   return (
+
+
     <SafeAreaView style={styles.container}>
+
       <View >
+        <DisplayAnImage/>
       <FlatList
         data={DATA}
         renderItem={({ item }) => (
@@ -77,7 +92,29 @@ export default function Home() {
   );
 }
 
+const DisplayAnImage = () => {
+  return (
+    <View style={styles.imageContainer}>
+      <Image
+        style={styles.logo}
+        source={require('/Users/mac/Desktop/Goal1/GoalMotivator1/GoalMotivator_APP/src/media/GoalSettingPlaceHolder.jpg')}
+      />
+    </View>
+  );
+}
+
+
+
 const styles = StyleSheet.create({
+  ImageContainer: {
+    paddingTop: 50,
+  },
+
+  logo: {
+    width: 1000,
+    height: 500,
+  },
+
   list: {
         flex: 1,
         flexDirection: 'column',
@@ -98,7 +135,7 @@ const styles = StyleSheet.create({
   justifyContent: 'center',
 flex:1,
 margin: 10,
-// paddingTop: (Platform.OS) === 'ios' ? 20 : 0
+
   },
   item: {
     flex: 1,

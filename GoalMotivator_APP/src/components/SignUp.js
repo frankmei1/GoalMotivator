@@ -2,15 +2,17 @@ import * as React from 'react';
 import { Text, View, StyleSheet,  TextInput, TouchableHighlight, Image, Alert } from 'react-native';
 import maleIcon from '../assets/icons/maleIcon.png';
 import message from '../assets/icons/message.png';
+import SelectPicker from 'react-native-select-picker';
 import key1 from '../assets/icons/key1.png';
 import calender from '../assets/icons/calender.png';
 import userName from '../assets/icons/userName.png';
-
+import gender1 from '../assets/icons/gender1.png';
 
 export default function SignUpPage({ navigation }) {
 
   const[name, setName] = React.useState("")
   const[age, setAge] = React.useState("")
+  const[gender, setGender] = React.useState("")
   const[username, setUsername] = React.useState("")
   const[email, setEmail] = React.useState("")
   const[password, setPassword] = React.useState("")
@@ -28,7 +30,7 @@ export default function SignUpPage({ navigation }) {
               placeholder="Full name"
               keyboardType="email-address"
               underlineColorAndroid='transparent'
-              onChangeText={(fullName) => this.setState({fullName})}/>
+              onChangeText={(name) => setName({name})}/>
         </View>
 
         <View style={styles.inputContainer}>
@@ -37,7 +39,18 @@ export default function SignUpPage({ navigation }) {
               placeholder="Your age"
               keyboardType="email-address"
               underlineColorAndroid='transparent'
-              onChangeText={(age) => this.setState({age})}/>
+              onChangeText={(age) => setAge(age)}/>
+        </View>
+          
+        <View>
+          <Image style={styles.inputIcon} source={gender1}/>
+          <SelectPicker onValueChange={(gender) => {setGender(gender)}} selected={gender}>
+            <Text style={styles.inputs}>Select your gender</Text>
+            <SelectPicker.Item label="Male" value="male" />	
+            <SelectPicker.Item label="Female" value="female" />	
+            <SelectPicker.Item label="Other" value="other" />	
+            <SelectPicker.Item label="Unidentified" value="unidentified" />	
+          </SelectPicker>
         </View>
 
         <View style={styles.inputContainer}>
@@ -46,7 +59,7 @@ export default function SignUpPage({ navigation }) {
               placeholder="User name (less than 20 characthers)"
               keyboardType="email-address"
               underlineColorAndroid='transparent'
-              onChangeText={(age) => this.setState({age})}/>
+              onChangeText={(username) => setUsername(username)}/>
         </View>
 
         <View style={styles.inputContainer}>
@@ -55,7 +68,7 @@ export default function SignUpPage({ navigation }) {
               placeholder="Email"
               keyboardType="email-address"
               underlineColorAndroid='transparent'
-              onChangeText={(email) => this.setState({email})}/>
+              onChangeText={(email) => setEmail({email})}/>
         </View>
 
         <View style={styles.inputContainer}>
@@ -64,15 +77,19 @@ export default function SignUpPage({ navigation }) {
               placeholder="Password (6-20 characthers)"
               secureTextEntry={true}
               underlineColorAndroid='transparent'
-              onChangeText={(password) => this.setState({password})}/>
+              onChangeText={(password) => setPassword({password})}/>
         </View>
 
-        <TouchableHighlight style={[styles.buttonContainer, styles.signupButton]} onPress={() => this.onClickListener('sign_up')}>
+        <TouchableHighlight style={[styles.buttonContainer, styles.signupButton]} onPress={() => sign_up_now()}>
           <Text style={styles.signUpText}>Sign up</Text>
         </TouchableHighlight>
 
     </View>
   );
+}
+
+function sign_up_now(){
+  console.log("signing up")
 }
 
 const styles = StyleSheet.create({
