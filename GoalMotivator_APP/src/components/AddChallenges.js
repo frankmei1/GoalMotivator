@@ -17,7 +17,6 @@ export default function AddChallenge({ route, navigation }) {
     const [frequency, setFrequency] = React.useState('')
     const [enrollment, setEnrollment] = React.useState('')
 
-    const { control, handleSubmit, errors } = useForm();
 
     const { ifVisible, setIfVisible} = React.useState(false);
 
