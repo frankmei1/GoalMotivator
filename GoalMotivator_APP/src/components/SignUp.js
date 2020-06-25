@@ -30,7 +30,7 @@ export default function SignUpPage({ navigation }) {
               placeholder="Full name"
               keyboardType="email-address"
               underlineColorAndroid='transparent'
-              onChangeText={(fullName) => this.setState({fullName})}/>
+              onChangeText={(name) => setName({name})}/>
         </View>
 
         <View style={styles.inputContainer}>
@@ -39,12 +39,12 @@ export default function SignUpPage({ navigation }) {
               placeholder="Your age"
               keyboardType="email-address"
               underlineColorAndroid='transparent'
-              onChangeText={(age) => this.setState({age})}/>
+              onChangeText={(age) => setAge(age)}/>
         </View>
           
         <View>
           <Image style={styles.inputIcon} source={gender1}/>
-          <SelectPicker onValueChange={(gender) => {this.setState({selected: gender})}} selected={this.state.selected}>
+          <SelectPicker onValueChange={(gender) => {setGender(gender)}} selected={gender}>
             <Text style={styles.inputs}>Select your gender</Text>
             <SelectPicker.Item label="Male" value="male" />	
             <SelectPicker.Item label="Female" value="female" />	
@@ -59,7 +59,7 @@ export default function SignUpPage({ navigation }) {
               placeholder="User name (less than 20 characthers)"
               keyboardType="email-address"
               underlineColorAndroid='transparent'
-              onChangeText={(age) => this.setState({age})}/>
+              onChangeText={(username) => setUsername(username)}/>
         </View>
 
         <View style={styles.inputContainer}>
@@ -68,7 +68,7 @@ export default function SignUpPage({ navigation }) {
               placeholder="Email"
               keyboardType="email-address"
               underlineColorAndroid='transparent'
-              onChangeText={(email) => this.setState({email})}/>
+              onChangeText={(email) => setEmail({email})}/>
         </View>
 
         <View style={styles.inputContainer}>
@@ -77,15 +77,19 @@ export default function SignUpPage({ navigation }) {
               placeholder="Password (6-20 characthers)"
               secureTextEntry={true}
               underlineColorAndroid='transparent'
-              onChangeText={(password) => this.setState({password})}/>
+              onChangeText={(password) => setPassword({password})}/>
         </View>
 
-        <TouchableHighlight style={[styles.buttonContainer, styles.signupButton]} onPress={() => this.onClickListener('sign_up')}>
+        <TouchableHighlight style={[styles.buttonContainer, styles.signupButton]} onPress={() => sign_up_now()}>
           <Text style={styles.signUpText}>Sign up</Text>
         </TouchableHighlight>
 
     </View>
   );
+}
+
+function sign_up_now(){
+  console.log("signing up")
 }
 
 const styles = StyleSheet.create({
