@@ -46,50 +46,46 @@ var uuid = require('react-native-uuid');
 const realDeviceId = uuid.v4(); // this generates a unique ID for this device.
 
 export default function Challenges({navigation}) {
-
+  
   const localserverURL='http://localhost:3000'  // for local server
   const remoteserverURL = 'http://gracehopper.cs-i.brandeis.edu:3500'
 
-  const [selected, setSelected] = React.useState(new Map());
   const [items, setItems] = useState(challengeData);
+  const [loading, setLoading] = useState(true);
 
-
-  const [value, setValue] = useState(0);
-  const [deviceId,setDeviceId] = useState("1234")
-  const [email, setEmail] = useState("anonymous@brandeis.edu");
+  // const [value, setValue] = useState(0);
+  const [deviceId,setDeviceId] = useState("p01")
+  const [email, setEmail] = useState("p01");
   const [loggingIn,setLoggingIn] = useState(true)
 
-  const onSelect = React.useCallback(
-    id => {
-      const newSelected = new Map(selected);
-      newSelected.set(id, !selected.get(id));
-      setSelected(newSelected);
-    },
-    [selected],
-  );
-
+ 
   const onSubmit = (item) =>{
         item.id = items.length
-        setItems(items.concat(item))
+        writeItemToCloud(items.concat(item))
   }
   
   const writeItemToCloud = async newValue => {
+    try{
+            console.log('newValue' + JSON.stringify(newValue))
+          await fetch(`${remoteserverURL}/store`,{
+            method:"POST",
+            headers: {
+              Accept: 'application/json',
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              key: 'GOAlMotivator',
+              deviceId: deviceId,
+              value: newValue
+            })
+          });
+          
+          setItems(newValue);
+    } catch(e){
+      console.log('error in cloud' + e)
+    }
     //await setItem(JSON.stringify(newValue));
-    console.log('newValue' + JSON.stringify(newValue))
-    await fetch(`${remoteserverURL}/store`,{
-      method:"POST",
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        key: 'GOAlMotivator',
-        deviceId: deviceId,
-        value: newValue
-      })
-    });
-    
-    setValue(newValue);
+  
   };
 
   const readItemFromCloud = async () => {
@@ -108,16 +104,21 @@ export default function Challenges({navigation}) {
     })
     const itemParsed = await item.json()
     console.log(`item = ${itemParsed}`)
-    const v = parseInt(itemParsed) || 0
+    const v = itemParsed || items
     setItems(v)
-    console.log(`just set value to ${v}, now value=${value}`)
+    console.log(`just set value to ${v}, now value=${items}`)
     //setValue(JSON.parse(item));
   };
-  
-  writeItemToCloud(items);
-  readItemFromCloud()
-  
-  return (
+
+  useEffect(() =>{
+    readItemFromCloud()
+    setLoading(false)
+  },[])
+
+  if (loading){
+    return <Text> loading</Text>
+  } else{
+   return (
     <SafeAreaView style={styles.container}>
       <MenuButton
             style = {styles.Addcontainer}
@@ -137,18 +138,18 @@ export default function Challenges({navigation}) {
               title={item.challenge}
               src = {item.img.src}
               info = {item.enrollment}
-              selected={!!selected.get(item.id)}
-              onSelect={onSelect}
             />
         )}
           keyExtractor={item => item.id}
-          extraData={selected}
       />
       </ScrollView>
     </SafeAreaView>
   );
 }
 
+  }
+
+  
 const styles = StyleSheet.create({
   container: {
     flex: 1,

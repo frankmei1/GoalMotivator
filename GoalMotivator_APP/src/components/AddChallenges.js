@@ -1,7 +1,6 @@
 import React ,{useState,useEffect} from 'react';
 import { Text, View, StyleSheet, Modal, TextInput, TouchableHighlight, Image, Alert } from 'react-native';
 import { FormLabel, FormInput, FormValidationMessage } from 'react-native-elements';
-import { useForm, Controller } from "react-hook-form";
 import { AsyncStorage } from 'react-native';
 import {DatePicker} from "react-native-common-date-picker";
 import {CalendarList} from "react-native-common-date-picker";
@@ -17,7 +16,6 @@ export default function AddChallenge({ route, navigation }) {
     const [frequency, setFrequency] = React.useState('')
     const [enrollment, setEnrollment] = React.useState('')
 
-    const { control, handleSubmit, errors } = useForm();
 
     const { ifVisible, setIfVisible} = React.useState(false);
 
