@@ -97,7 +97,7 @@ const DisplayAnImage = () => {
     <View style={styles.imageContainer}>
       <Image
         style={styles.logo}
-        source={require('/Users/mac/Desktop/Goal1/GoalMotivator1/GoalMotivator_APP/src/media/GoalSettingPlaceHolder.jpg')}
+        source={require('../media/GoalSettingPlaceHolder.jpg')}
       />
     </View>
   );
