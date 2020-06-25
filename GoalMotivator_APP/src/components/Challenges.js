@@ -17,8 +17,8 @@ import AddChallenges from './AddChallenges.js';
 
 
 
-function Item({ id, title, src, info, selected, onSelect }) {
-  const imageSource = '../assets/' + src;    
+function Item({ id, title, info, selected, onSelect }) {
+  // const imageSource = '../assets/' + src;    
   return (
     <TouchableHighlight
       underlayColor = '#f0f'
@@ -136,7 +136,6 @@ export default function Challenges({navigation}) {
             <Item
               id={item.id}
               title={item.challenge}
-              src = {item.img.src}
               info = {item.enrollment}
             />
         )}
