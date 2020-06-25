@@ -45,7 +45,7 @@ export default function SignUpPage({ navigation }) {
         <View>
           <Image style={styles.inputIcon} source={gender1}/>
           <Picker 
-            style={styles.inputs}
+            style={{height: 45, width: 350}}
             onValueChange={(gender) => setGender(gender)} selectedValue={gender}>
               <Text>Select your gender</Text>
               <Picker.Item label="Male" value="male" />
