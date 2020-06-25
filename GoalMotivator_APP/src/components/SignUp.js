@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Text, View, StyleSheet,  TextInput, TouchableHighlight, Image, Alert } from 'react-native';
 import maleIcon from '../assets/icons/maleIcon.png';
 import message from '../assets/icons/message.png';
-import SelectPicker from 'react-native-select-picker';
+import {Picker} from '@react-native-community/picker';
 import key1 from '../assets/icons/key1.png';
 import calender from '../assets/icons/calender.png';
 import userName from '../assets/icons/userName.png';
@@ -44,13 +44,15 @@ export default function SignUpPage({ navigation }) {
           
         <View>
           <Image style={styles.inputIcon} source={gender1}/>
-          <SelectPicker onValueChange={(gender) => {setGender(gender)}} selected={gender}>
-            <Text style={styles.inputs}>Select your gender</Text>
-            <SelectPicker.Item label="Male" value="male" />	
-            <SelectPicker.Item label="Female" value="female" />	
-            <SelectPicker.Item label="Other" value="other" />	
-            <SelectPicker.Item label="Unidentified" value="unidentified" />	
-          </SelectPicker>
+          <Picker 
+            style={styles.inputs}
+            onValueChange={(gender) => setGender(gender)} selectedValue={gender}>
+              <Text>Select your gender</Text>
+              <Picker.Item label="Male" value="male" />
+              <Picker.Item label="Female" value="female" />
+              <Picker.Item label="Other" value="other" />
+              <Picker.Item label="Unidentified" value="unidentified" />
+          </Picker>
         </View>
 
         <View style={styles.inputContainer}>
