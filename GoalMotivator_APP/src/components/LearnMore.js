@@ -1,16 +1,10 @@
 import React from 'react';
 import {
-  SafeAreaView,
   TouchableHighlight,
-  FlatList,
-  StyleSheet,
   Text,
   View,
-  ScrollView,
   Image
 } from 'react-native';
-import Constants from 'expo-constants';
-import challengeData from '../assets/challenges/challengeData.js';
 import crossfit from '../assets/challenges/media/crossfit.png';
 import MenuButton from './MenuButton/MenuButton';
 

@@ -1,6 +1,5 @@
-import React, { Component } from "react";
+import React from "react";
 import {Header, Icon} from "react-native-elements";
-import { Text, View, Button } from 'react-native';
 
 
 export default function CustomedHeader({name, navigation}) {

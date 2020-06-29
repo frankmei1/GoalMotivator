@@ -2,12 +2,9 @@
 
 
 import React from 'react';
-import { Text, View, Button } from 'react-native';
+import { Text, View } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { createDrawerNavigator } from '@react-navigation/drawer';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import Home from '../components/Home.js';
 import CustomedHeader from '../components/Header.js';
 
 const Stack = createStackNavigator();

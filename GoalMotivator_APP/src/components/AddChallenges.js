@@ -1,16 +1,10 @@
-import React ,{useState,useEffect} from 'react';
-import { Text, View, StyleSheet, Modal, TextInput, TouchableHighlight, Image, Alert } from 'react-native';
-import { FormLabel, FormInput, FormValidationMessage } from 'react-native-elements';
-//import { useForm, Controller } from "react-hook-form";
-import { AsyncStorage } from 'react-native';
-import {DatePicker} from "react-native-common-date-picker";
-import {CalendarList} from "react-native-common-date-picker";
+import React from 'react';
+import { Text, View, StyleSheet, TextInput, TouchableHighlight, Image, Alert } from 'react-native';
 
 export default function AddChallenge({ route, navigation }) {
 
     const { parentCall } = route.params;
 
-    const [open, setOpen] = React.useState(false);
     const [openToOthers, setOpenToOthers] = React.useState('');
     const [challenge, setChallenge] = React.useState('')
     const [timeperiod, setTimePeriod] = React.useState('')
@@ -18,7 +12,6 @@ export default function AddChallenge({ route, navigation }) {
     const [enrollment, setEnrollment] = React.useState('')
 
 
-    const { ifVisible, setIfVisible} = React.useState(false);
 
 
 

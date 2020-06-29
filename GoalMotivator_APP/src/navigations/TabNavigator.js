@@ -1,10 +1,7 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import React from 'react';
 import MainNavigator from './AppNavigation.js';
 import Setting from './Setting.js';
-import { createStackNavigator } from '@react-navigation/stack';
-import { Button, View, Text } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 

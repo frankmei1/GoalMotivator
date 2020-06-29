@@ -9,16 +9,13 @@ import {
   ScrollView,
   Image
 } from 'react-native';
-import Constants from 'expo-constants';
 import challengeData from '../assets/challenges/challengeData.js';
 import crossfit from '../assets/challenges/media/crossfit.png';
 import MenuButton from './MenuButton/MenuButton';
-import AddChallenges from './AddChallenges.js';
 
 
 
 function Item({ id, title, info, selected, onSelect }) {
-  // const imageSource = '../assets/' + src;    
   return (
     <TouchableHighlight
       underlayColor = '#f0f'
