@@ -6,7 +6,8 @@ import {
   StyleSheet,
   View,
   Text,
-   Image
+   Image,
+   ImageBackground
 } from 'react-native';
 import Constants from 'expo-constants';
 
@@ -67,7 +68,9 @@ export default function Home() {
 
   return (
 
-
+<ImageBackground
+                source={require('../media/GoalSettingPlaceHolder.jpg')}
+                style={styles.container}>
     <SafeAreaView style={styles.container}>
 
       <View >
@@ -89,6 +92,8 @@ export default function Home() {
       />
       </View>
     </SafeAreaView>
+                </ImageBackground>
+
   );
 }
 
@@ -107,12 +112,11 @@ const DisplayAnImage = () => {
 
 const styles = StyleSheet.create({
   ImageContainer: {
-    paddingTop: 50,
+    flex: 1,
   },
 
   logo: {
-    width: 1000,
-    height: 500,
+    flex: 1
   },
 
   list: {
@@ -128,7 +132,7 @@ const styles = StyleSheet.create({
   alignContent: 'stretch',
   height: 100,
   margin: 5,
-  backgroundColor: 'white'
+  backgroundColor: 'transparent'
 
 },
    container: {
