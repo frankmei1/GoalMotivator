@@ -148,6 +148,7 @@ export default function Challenges({navigation}) {
   
 const styles = StyleSheet.create({
   container: {
+    minWidth: 200,
     flex: 1,
     margin: 10,
     justifyContent: 'center',
