@@ -19,15 +19,6 @@ In the project directory, you can run:
 ### `npm install`
 Install the node modules for the proeject
 
-### `npm install @material-ui/core`
-Install the packages from material-ui core
-
-### `npm install @material-ui/icons`
-Install the packages from material-ui icon
-
-### `npm install react-router-dom` 
-Install the packages for creating different routers.
-
 ### Start
 ### `npm start`
 Runs the app in the development mode.<br />
