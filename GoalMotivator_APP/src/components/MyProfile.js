@@ -20,7 +20,6 @@ export default class Profile extends Component {
               <Text style={styles.info}>Location</Text>
               <Text style={styles.description}>Descrption</Text>
               <Text style={styles.info}>LIST OF GROUPS??</Text>
-
               <TouchableOpacity style={styles.buttonContainer}>
                 <Text>Contact Method 1</Text>
               </TouchableOpacity>
