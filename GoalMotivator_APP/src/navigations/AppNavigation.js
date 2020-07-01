@@ -15,6 +15,7 @@ import Challenges from "../components/Challenges.js";
 import SignUp from "../components/SignUp.js";
 import AboutUs from "../components/AboutUs/AboutUs.js";
 import Proofs from "../components/Proofs.js";
+import LearnMore from "../components/LearnMore.js";
 import AddChallenges from "../components/AddChallenges.js"
 
 const Stack = createStackNavigator();
@@ -41,7 +42,7 @@ export default function MainNavigator({props}) {
       <Stack.Screen name="MyProfile" component={MyProfile} options={{ header: props => <CustomedHeader name="MyProfile" navigation={props.navigation} /> }}/>
       <Stack.Screen name="SignUp" component={SignUp} options={{ header: props => <CustomedHeader name="SignUp" navigation={props.navigation} /> }}/>
       <Stack.Screen name="Proofs" component={Proofs} options={{ header: props => <CustomedHeader name="Proofs" navigation={props.navigation} /> }}/>
-      <Stack.Screen name="Learn More" component={Proofs} options={{ header: props => <CustomedHeader name="Learn More" navigation={props.navigation} /> }}/>
+      <Stack.Screen name="LearnMore" component={LearnMore} options={{ header: props => <CustomedHeader name="Learn More" navigation={props.navigation} /> }}/>
       <Stack.Screen name="AddChallenge" component={AddChallenges}  options={{ header: props => <CustomedHeader name="Add Challenge" navigation={props.navigation} /> }}/>
 
     </Stack.Navigator>

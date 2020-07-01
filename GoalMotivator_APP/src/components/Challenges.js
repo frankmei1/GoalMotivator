@@ -15,11 +15,10 @@ import MenuButton from './MenuButton/MenuButton';
 
 
 
-function Item({ id, title, info, selected, onSelect }) {
+function Item({item, title, info, navigation}) {
   return (
     <TouchableHighlight
       underlayColor = '#f0f'
-      onPress={() => onSelect(id)}
     >
     <View style = {styles.container}>
     <Image style={[styles.photo]} source={crossfit}/> 
@@ -29,10 +28,9 @@ function Item({ id, title, info, selected, onSelect }) {
             style={styles.button}
             title="Learn More"
             source={require('../assets/icons/category.png')}
-            // onPress={() => {
-            //   navigation.navigate('About Us');
-            //   navigation.closeDrawer();
-            // }}
+            onPress={() => {
+              navigation.navigate('LearnMore',  {item: item});
+          }}
           />
     </View>
     </TouchableHighlight>
@@ -51,8 +49,8 @@ export default function Challenges({navigation}) {
   const [loading, setLoading] = useState(true);
 
   // const [value, setValue] = useState(0);
-  const [deviceId,setDeviceId] = useState("p01")
-  const [email, setEmail] = useState("p01");
+  const [deviceId,setDeviceId] = useState("Qingtian Mei")
+  const [email, setEmail] = useState("Qingtian Mei");
   const [loggingIn,setLoggingIn] = useState(true)
 
  
@@ -130,10 +128,15 @@ export default function Challenges({navigation}) {
           <FlatList
           data={items}
           renderItem={({ item }) => (
+            console.log(item),
             <Item
-              id={item.id}
+              item={item}
               title={item.challenge}
               info = {item.enrollment}
+              navigation = {navigation}
+              onPress={() => {
+                navigation.navigate('LearnMore',  {item: item});
+            }}
             />
         )}
           keyExtractor={item => item.id}
@@ -179,7 +182,6 @@ const styles = StyleSheet.create({
     },
     shadowRadius: 5,
     shadowOpacity: 1.0,
-    elevation: 3
   },
   info: {
     marginTop: 3,

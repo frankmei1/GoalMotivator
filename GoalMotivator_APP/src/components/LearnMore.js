@@ -3,33 +3,78 @@ import {
   TouchableHighlight,
   Text,
   View,
-  Image
+  Image,
+  StyleSheet
 } from 'react-native';
 import crossfit from '../assets/challenges/media/crossfit.png';
 import MenuButton from './MenuButton/MenuButton';
 
 
-export function LearnMore({ id, title, src, info, selected, onSelect }) {
-  const imageSource = '../assets/' + src;    
+export default function LearnMore({route, navigation}) {
+  const {item} = route.params;
+  // const imageSource = '../assets/' + src;    
   return (
     <TouchableHighlight
       underlayColor = '#f0f'
-      onPress={() => onSelect(id)}
     >
     <View style = {styles.container}>
     <Image style={[styles.photo]} source={crossfit}/> 
-    <Text style={styles.name}>{title}</Text>
-    <Text style={styles.info}>{info}</Text>
+    <Text style={styles.name}>{item.title}</Text>
+    <Text style={styles.info}>{item.info}</Text>
     <MenuButton
             style={styles.button}
-            title="Learn More"
+            title="JOIN NOW"
             source={require('../assets/icons/category.png')}
-            // onPress={() => {
-            //   navigation.navigate('About Us');
-            //   navigation.closeDrawer();
-            // }}
           />
     </View>
     </TouchableHighlight>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'skyblue',
+  },
+  inputContainer: {
+      borderBottomColor: '#F5FCFF',
+      backgroundColor: 'white',
+      borderRadius:30,
+      borderBottomWidth: 1,
+      width:250,
+      height:45,
+      marginBottom:20,
+      flexDirection: 'row',
+      alignItems:'center'
+  },
+  inputs:{
+      height:45,
+      marginLeft:16,
+      borderBottomColor: '#FFFFFF',
+      flex:1,
+  },
+  inputIcon:{
+    width:30,
+    height:30,
+    marginLeft:15,
+    justifyContent: 'center'
+  },
+  buttonContainer: {
+    height:45,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom:20,
+    width:250,
+    borderRadius:30,
+
+  },
+  signupButton: {
+    backgroundColor: "gray",
+  },
+  signUpText: {
+    color: 'white',
+  }
+})
