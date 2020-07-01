@@ -93,20 +93,26 @@ export default function Challenges({navigation}) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        key: 'counterDemo',
+        key: 'GOAlMotivator',
         deviceId: deviceId,
       })
     })
-    const itemParsed = await item.json()
+    let itemParsed = await item.json()
     console.log(`item = ${itemParsed}`)
+    console.log(typeof(itemParsed))
+    if(itemParsed=="null"){
+      itemParsed = null
+    }
     const v = itemParsed || items
+    console.log(items)
     setItems(v)
-    console.log(`just set value to ${v}, now value=${items}`)
+    console.log(`just set value to ${v}, now value=${JSON.stringify(items, null, 2)}`)
     //setValue(JSON.parse(item));
   };
 
   useEffect(() =>{
     readItemFromCloud()
+    console.log(items)
     setLoading(false)
   },[])
 
@@ -128,15 +134,12 @@ export default function Challenges({navigation}) {
           <FlatList
           data={items}
           renderItem={({ item }) => (
-            console.log(item),
+            console.log(items),
             <Item
               item={item}
               title={item.challenge}
               info = {item.enrollment}
               navigation = {navigation}
-              onPress={() => {
-                navigation.navigate('LearnMore',  {item: item});
-            }}
             />
         )}
           keyExtractor={item => item.id}
