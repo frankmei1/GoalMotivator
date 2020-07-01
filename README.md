@@ -1,4 +1,4 @@
-# Goal Motivator Code Repository
+# Goal Motivator App Code Repository
 
 This is a folder containing all of the project code used to build the Goal Motivator Application for the Summer Course COSI153aj at Brandeis University.
 ![Test Image 1](https://github.com/frankmei1/GoalMotivator/blob/master/src/media/Screen%20Shot%20of%20the%20App.png?raw=true)
@@ -18,15 +18,6 @@ In the project directory, you can run:
 ### Installation
 ### `npm install`
 Install the node modules for the proeject
-
-### `npm install @material-ui/core`
-Install the packages from material-ui core
-
-### `npm install @material-ui/icons`
-Install the packages from material-ui icon
-
-### `npm install react-router-dom` 
-Install the packages for creating different routers.
 
 ### Start
 ### `npm start`
