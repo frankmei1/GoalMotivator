@@ -85,7 +85,6 @@ export default function SignUpPage({ navigation }) {
         <TouchableHighlight style={[styles.buttonContainer, styles.signupButton]} onPress={() => sign_up_now()}>
           <Text style={styles.signUpText}>Sign up</Text>
         </TouchableHighlight>
-
     </View>
   );
 }

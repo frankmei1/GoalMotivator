@@ -11,32 +11,45 @@ import MenuButton from './MenuButton/MenuButton';
 
 
 export default function LearnMore({route, navigation}) {
+
   const {item} = route.params;
+  console.log(item);
+  
   // const imageSource = '../assets/' + src;    
   return (
     <TouchableHighlight
       underlayColor = '#f0f'
     >
-    <View style = {styles.container}>
-    <Image style={[styles.photo]} source={crossfit}/> 
-    <Text style={styles.name}>{item.title}</Text>
-    <Text style={styles.info}>{item.info}</Text>
-    <MenuButton
-            style={styles.button}
-            title="JOIN NOW"
-            source={require('../assets/icons/category.png')}
-          />
-    </View>
+      <View style = {styles.container}>
+          <Image style={[styles.photo]} source={crossfit}/> 
+          <Text style = {styles.name}>{item.challenges}</Text>
+          <Text style = {styles.name}>{item.description}</Text>
+          <Text style = {styles.name}>{item.enrollment}</Text>
+          <Text style = {styles.name}>{item.frequency}</Text>
+          <Text style = {styles.name}>{item.groupcreator}</Text>
+          <Text style = {styles.name}>{item.groupmembers}</Text>
+          <Text style = {styles.name}>{item.timeperiod}</Text>
+          <MenuButton
+                  style={styles.button}
+                  title="JOIN NOW"
+                  source={require('../assets/icons/category.png')}
+                />
+      </View>
     </TouchableHighlight>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    minWidth: 200,
     flex: 1,
+    margin: 10,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'skyblue',
+    height: 215,
+    borderColor: '#cccccc',
+    borderWidth: 0.5,
+    borderRadius: 20
   },
   inputContainer: {
       borderBottomColor: '#F5FCFF',
@@ -76,5 +89,31 @@ const styles = StyleSheet.create({
   },
   signUpText: {
     color: 'white',
-  }
+  },
+    photo: {
+    width: '100%',
+    height: 155,
+    borderRadius:20,
+    borderBottomLeftRadius: 0,
+    borderBottomRightRadius: 0,
+    shadowColor: 'blue',
+    shadowOffset: {
+      width: 0,
+      height: 3
+    },
+    shadowRadius: 5,
+    shadowOpacity: 1.0,
+  },
+  info: {
+    marginTop: 3,
+    marginBottom: 5
+  },
+   name: {
+    flex: 1,
+    fontSize: 20,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    color: '#333333',
+    marginTop: 8
+  },
 })
