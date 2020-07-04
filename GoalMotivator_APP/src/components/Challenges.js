@@ -110,12 +110,10 @@ export default function Challenges({navigation}) {
     })
     let itemParsed = await item.json()
     console.log(`item = ${itemParsed}`)
-    console.log(typeof(itemParsed))
     if(itemParsed=="null"){
       itemParsed = null
     }
     const v = itemParsed || items
-    console.log(items)
     setItems(v)
     console.log(`just set value to ${v}, now value=${JSON.stringify(items, null, 2)}`)
     //setValue(JSON.parse(item));
@@ -124,7 +122,6 @@ export default function Challenges({navigation}) {
   useEffect(() =>{
     testConnect();
     readItemFromCloud()
-    console.log(items)
     setLoading(false)
   },[])
 
@@ -146,7 +143,6 @@ export default function Challenges({navigation}) {
           <FlatList
           data={items}
           renderItem={({ item }) => (
-            console.log(items),
             <Item
               item={item}
               title={item.challenge}
@@ -160,7 +156,6 @@ export default function Challenges({navigation}) {
     </SafeAreaView>
   );
 }
-
   }
 
   
