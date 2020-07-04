@@ -39,6 +39,9 @@ function Item({item, title, info, navigation}) {
 
 var uuid = require('react-native-uuid');
 const realDeviceId = uuid.v4(); // this generates a unique ID for this device.
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://qingtian_mei:<testPassword>@cluster0.xsgi5.mongodb.net/<dbname>?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
 
 export default function Challenges({navigation}) {
   
@@ -53,7 +56,15 @@ export default function Challenges({navigation}) {
   const [email, setEmail] = useState("Qingtian Mei");
   const [loggingIn,setLoggingIn] = useState(true)
 
- 
+  const testConnect = () =>{
+    client.connect(err => {
+      const collection = client.db("test").collection("devices");
+      // perform actions on the collection object
+      client.close();
+    });
+    
+  }
+  
   const onSubmit = (item) =>{
         item.id = items.length
         writeItemToCloud(items.concat(item))
@@ -111,6 +122,7 @@ export default function Challenges({navigation}) {
   };
 
   useEffect(() =>{
+    testConnect();
     readItemFromCloud()
     console.log(items)
     setLoading(false)
